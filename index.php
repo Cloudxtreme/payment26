@@ -178,6 +178,13 @@
                           <input type="text" id="cardnumber" maxlength="19" placeholder="Card Number" class="card-number form-control">
                         </div>                        
                       </div>
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                        <!-- CVV -->
+                        <div class="form-group card-data">
+                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>CVV:</label>
+                            <input type="text" id="cvv" placeholder="CVV" maxlength="4" class="card-cvc form-control">                          
+                        </div>
+                      </div>
                       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                         <!-- Expiry-->
                         <div class="form-group card-data">
@@ -202,13 +209,6 @@
                             </select>
                           </div>                          
                         </div>                        
-                      </div>
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
-                        <!-- CVV -->
-                        <div class="form-group card-data">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>CVV:</label>
-                            <input type="text" id="cvv" placeholder="CVV" maxlength="4" class="card-cvc form-control">                          
-                        </div>
                       </div>
                     </div>
                   </fieldset>

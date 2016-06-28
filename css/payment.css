@@ -39,11 +39,6 @@ h2 {
   color: #433931;
 }
 
-h2 .glyphicon-asterisk.required {
-	font-size: 13px;
-	top: -8px;
-}
-
 /* ICONS */
 
 .glyphicon-asterisk.required {
@@ -59,16 +54,15 @@ h2 .glyphicon-asterisk.required {
 }
 
 div.card-data i {
-    top: 28px!important;
-    right: 0px!important;
+  top: 28px!important;
+  right: 23px!important;
 }
 
 /* SPECIFIC STYLES */
 
 .payamount {
     background-color: #f8dceb;
-    border-radius: 5px;
-    margin-left: 35px;
+    border-radius: 5px;    
     padding: 15px 0px 15px 20px;
     text-align: center;
     width: 200px;
@@ -119,8 +113,9 @@ div.card-data i {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 768px) {
-  #cardnumber {
+@media (min-width: 991px) {
+
+  #cardnumber, #cvv {
   	width: 90%;
   }
 
@@ -131,4 +126,16 @@ div.card-data i {
   select.card-expiry-year.stripe-sensitive.required.form-control {
   	width:45%;
   }
+
+	div.card-data i {
+	  top: 28px!important;
+	  right: 23px!important;
+	}
+}
+
+@media (max-width: 990px) {
+	h2 .glyphicon-asterisk.required {
+	  top: 29px!important;
+	  right: 7px!important;
+	}
 }
