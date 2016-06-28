@@ -95,16 +95,15 @@
                     <input type="radio" name="donation-level" id="donation-level-6" value="0">
                     <label for="donation-level-6">OTHER</label>
                     <div>
-                      <input type="text" name="" id="">
+                      <input class="form-control" type="text" name="" id="" placeholder="$0.00">
                     </div>
                   </div>
-                  <div class="">
+                  <div class="checkbox">
                     <input type="checkbox" name="" id="level_standardauto_repeatname">
                     <label for="level_standardauto_repeatname"> Make this my monthly donation.</label>
                     <span class="glyphicon glyphicon-info-sign"></span>
                   </div>
-                  We will automatically receive your gift each month.
-                  <div class="">
+                  <div class="checkbox">
                     <input type="checkbox" name="" id="tribute_show_honor_fieldsname">
                     <label for="tribute_show_honor_fieldsname">Make my gift in honor or memory of a friend or loved one.</label>
                     <span class="glyphicon glyphicon-info-sign"></span>
@@ -114,23 +113,20 @@
                     <div class="form-content">
                       <span class="glyphicon glyphicon-asterisk"></span>
                       <label for="tribute_honoree_last_namename">Person's Name or Occasion</label>
-                      <input name="tribute_honoree_last_namename" id="tribute_honoree_last_namename" value="" maxlength="50" type="text">
+                      <input class="form-control" name="tribute_honoree_last_namename" id="tribute_honoree_last_namename" value="" maxlength="50" type="text" placeholder="Person's Name or Occasion">
                     </div>
                     <div class="">
                       <span class="glyphicon glyphicon-asterisk"></span>
-                      <label><input type="radio" name="tribute_type_text" value="tribute_type_value1">In Memory of </label>
-                      <label><input type="radio" name="tribute_type_text" value="tribute_type_value2">In Honor of </label>
+                      <label class="radio-inline"><input type="radio" name="tribute_type_text" value="tribute_type_value1">In Memory of </label>
+                      <label class="radio-inline"><input type="radio" name="tribute_type_text" value="tribute_type_value2">In Honor of </label>
                     </div>
                     <div class="">
-                      <label><input type="radio" name="send_tribute_radio" value="No_Thanks">No Thanks</label>
-                      <label><input type="radio" name="send_tribute_radio" value="Yes_Mail_Card">Yes, Mail Card</label>
-                      <label><input type="radio" name="send_tribute_radio" value="Yes_eCard">Yes, Send eCard</label>
+                      <label class="radio-inline"><input type="radio" name="send_tribute_radio" value="No_Thanks">No Thanks</label>
+                      <label class="radio-inline"><input type="radio" name="send_tribute_radio" value="Yes_Mail_Card">Yes, Mail Card</label>
+                      <label class="radio-inline"><input type="radio" name="send_tribute_radio" value="Yes_eCard">Yes, Send eCard</label>
                     </div>
                   </div>
                   <!-- Form Name -->
-                  <!-- <h1>You Decide.</h1>
-                  <p>You now have the power to contribute directly to stage IV/ metastatic breast cancer research, general breast cancer research, or triple negative breast cancer research. Decide where your donation goes by simply selecting a button under “Where would you like your donation to be applied?”</p>
-                  <p>Thank you - on behalf of everyone impacted by breast cancer everywhere - for joining with Komen to help save lives.</p> -->
                 </div>
               </div>
               <div class="row">
@@ -142,23 +138,23 @@
               <div class="row">
                 <div class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <!-- Form Name -->
-                  <h2>Where would you like your donation to be applied?</h2>
-                  <div>
+                  <h2><span class="glyphicon glyphicon-asterisk"></span>Where would you like your donation to be applied?</h2>
+                  <div class="radio">
                     <input type="radio" name="fund_radio" id="donation-stageIV">
                     <label for="donation-stageIV">Stage IV/ Metastatic Breast Cancer Research.</label>
                     <span class="glyphicon glyphicon-info-sign"></span>
                   </div>
-                  <div>
+                  <div class="radio">
                     <input type="radio" name="fund_radio" id="donation-generalBC">
                     <label for="generalBC">General Breast Cancer Research.</label>
                     <span class="glyphicon glyphicon-info-sign"></span>
                   </div>
-                  <div>
+                  <div class="radio">
                     <input type="radio" name="fund_radio" id="donation-">
                     <label for="donation-tripleNBC">Triple Negative Breast Cancer Research.</label>
                     <span class="glyphicon glyphicon-info-sign"></span>
                   </div>
-                  <div>
+                  <div class="radio">
                     <input type="radio" name="fund_radio" id="donation-generalFund">
                     <label for="generalFund">General Fund.</label>
                     <span class="glyphicon glyphicon-info-sign"></span>
