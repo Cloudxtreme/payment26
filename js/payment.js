@@ -13,7 +13,7 @@ $(document).ready(function() {
           cvc: $('.card-cvc').val(),
           exp_month: $('.card-expiry-month').val(),
           exp_year: $('.card-expiry-year').val(),
-      		name: $('.card-holder-name').val(),
+      		name: $('.card-holder-name').val()+' '+$('.card-holder-surname').val(),
       		address_line1: $('.address').val(),
       		address_city: $('.city').val(),
       		address_zip: $('.zip').val(),
@@ -75,9 +75,21 @@ $(document).ready(function() {
                   message: 'The card holder name is required and can\'t be empty'
               },
 		  stringLength: {
-                  min: 6,
+                  min: 2,
                   max: 70,
-                  message: 'The card holder name must be more than 6 and less than 70 characters long'
+                  message: 'The card holder name must be more than 2 and less than 70 characters long'
+              }
+          }
+      },
+      cardholdersurname: {
+          validators: {
+              notEmpty: {
+                  message: 'The card holder surname is required and can\'t be empty'
+              },
+      stringLength: {
+                  min: 2,
+                  max: 70,
+                  message: 'The card holder surname must be more than 2 and less than 70 characters long'
               }
           }
       },
@@ -90,6 +102,19 @@ $(document).ready(function() {
           creditCard: {
             message: 'The credit card number is invalid'
           },
+        }
+      },
+      phone: {
+        selector: '#phone',
+        validators: {
+          notEmpty: {
+            message: 'The phone number is required and can\'t be empty'
+          },
+        stringLength: {
+                          min: 6,
+                          max: 30,
+                          message: 'The phone number must be more than 6 and less than 30 characters long'
+                      }
         }
       },
       expMonth: {
