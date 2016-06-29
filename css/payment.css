@@ -115,6 +115,8 @@ div.card-data i {
 
 @media (min-width: 991px) {
 
+	/* CREDIT CARD DATA */
+
   #cardnumber, #cvv {
   	width: 90%;
   }
@@ -130,6 +132,26 @@ div.card-data i {
 	div.card-data i {
 	  top: 28px!important;
 	  right: 23px!important;
+	}
+
+	/* YOUR INFORMATION */
+
+	#your-information input, #billing-details input {
+		width: 90%;
+	}
+
+	#billing-details > fieldset > div:nth-child(1) > div > div > div > a {
+		width: 95%;
+	}
+
+	#your-information i.form-control-feedback {
+	  top: 29px;
+	  right: 31px;
+	}
+
+	#billing-details i.form-control-feedback {
+		top: 28px;
+		right: 35px;
 	}
 }
 

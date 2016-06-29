@@ -215,84 +215,83 @@
                 </div>
               </div>
               <div class="row">
-                <div class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div id="your-information" class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <fieldset>
-                    <!-- Form Name -->
-                    <h2>Your Information</h2>
-                    <!-- Card Holder Name -->
-                    <div class="form-group">
-                      <label class="col-sm-4 control-label"  for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>First name</label>
-                      <div class="col-sm-6">
-                        <input type="text" name="cardholdername" maxlength="70" placeholder="Card Holder Name" class="card-holder-name form-control">
+                    <div class="row">
+                      <!-- Form Name -->
+                      <h2>Your Information</h2>
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <!-- Card Holder Name -->
+                        <div class="form-group">
+                          <label class="control-label"  for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>First name</label>
+                          <input type="text" name="cardholdername" maxlength="70" placeholder="Card Holder Name" class="card-holder-name form-control">
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label"  for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Last Name</label>
+                          <input type="text" name="cardholdersurname" maxlength="70" placeholder="Card Holder Surname" class="card-holder-surname form-control">
+                        </div>
                       </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-sm-4 control-label"  for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Last Name</label>
-                      <div class="col-sm-6">
-                        <input type="text" name="cardholdersurname" maxlength="70" placeholder="Card Holder Surname" class="card-holder-surname form-control">
-                      </div>
-                    </div>
-                    <!-- Phone Number -->
-                    <div class="form-group">
-                      <label class="col-sm-4 control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Phone Number</label>
-                      <div class="col-sm-6">
-                        <input type="text" id="phone" name="phone" maxlength="30" placeholder="Phone Number" class="form-control">
-                      </div>
-                    </div>
-                    <!-- Email -->
-                    <div class="form-group">
-                      <label class="col-sm-4 control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Email Address</label>
-                      <div class="col-sm-6">
-                        <input type="text" name="email" maxlength="65" placeholder="Email" class="email form-control">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <!-- Phone Number -->
+                        <div class="form-group">
+                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Phone Number</label>
+                          <input type="text" id="phone" name="phone" maxlength="30" placeholder="Phone Number" class="form-control">                        
+                        </div>
+                        <!-- Email -->
+                        <div class="form-group">
+                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Email Address</label>
+                          <input type="text" name="email" maxlength="65" placeholder="Email" class="email form-control">                        
+                        </div>
                       </div>
                     </div>
                   </fieldset>
                 </div>
               </div>
               <div class="row">
-                <div class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div  id="billing-details" class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <fieldset>
-                    <!-- Form Name -->
-                    <h2>Billing Details</h2>
-
-                    <!-- Street -->
-                    <div class="form-group">
-                      <label class="col-sm-4 control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Street</label>
-                      <div class="col-sm-6">
-                        <input type="text" name="street" placeholder="Street" class="address form-control">
+                    <div class="row">
+                      <!-- Form Name -->
+                      <h2>Billing Details</h2>
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <!-- Country -->
+                        <div class="form-group">
+                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Country</label>                          
+                          <!--input type="text" name="country" placeholder="Country" class="country form-control"-->
+                          <div class="country bfh-selectbox bfh-countries" name="country" placeholder="Select Country" data-flags="true" data-filter="true"></div>
+                        </div>
                       </div>
                     </div>
-
-                    <!-- City -->
-                    <div class="form-group">
-                      <label class="col-sm-4 control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>City</label>
-                      <div class="col-sm-6">
-                        <input type="text" name="city" placeholder="City" class="city form-control">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <!-- Postcal Code -->
+                        <div class="form-group">
+                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Postal Code</label>
+                          <input type="text" name="zip" maxlength="9" placeholder="Postal Code" class="zip form-control">                          
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <!-- Street -->
+                        <div class="form-group">
+                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Street</label>                          
+                          <input type="text" name="street" placeholder="Street" class="address form-control">                          
+                        </div>
                       </div>
                     </div>
-
-                    <!-- State -->
-                    <div class="form-group">
-                      <label class="col-sm-4 control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>State</label>
-                      <div class="col-sm-6">
-                        <input type="text" name="state" maxlength="65" placeholder="State" class="state form-control">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <!-- City -->
+                        <div class="form-group">
+                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>City</label>                          
+                            <input type="text" name="city" placeholder="City" class="city form-control">                          
+                        </div>
                       </div>
-                    </div>
-
-                    <!-- Postcal Code -->
-                    <div class="form-group">
-                      <label class="col-sm-4 control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Postal Code</label>
-                      <div class="col-sm-6">
-                        <input type="text" name="zip" maxlength="9" placeholder="Postal Code" class="zip form-control">
-                      </div>
-                    </div>
-
-                    <!-- Country -->
-                    <div class="form-group">
-                      <label class="col-sm-4 control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Country</label>
-                      <div class="col-sm-6">
-                        <!--input type="text" name="country" placeholder="Country" class="country form-control"-->
-                        <div class="country bfh-selectbox bfh-countries" name="country" placeholder="Select Country" data-flags="true" data-filter="true"> </div>
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <!-- State -->
+                        <div class="form-group">
+                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>State</label>                          
+                          <input type="text" name="state" maxlength="65" placeholder="State" class="state form-control">                          
+                        </div>
                       </div>
                     </div>
                   </fieldset>
