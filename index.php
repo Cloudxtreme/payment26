@@ -309,28 +309,16 @@
                 </div>
               </div>
               <div class="row">
-                <div class="komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <fieldset>
-                    <!-- Important notice -->
-                    <div class="panel panel-success">
-                      <div class="panel-heading">
-                        <h3 class="panel-title">Important notice</h3>
-                      </div>
-                      <div class="panel-body">
-                        <p>Your card will be charged 30€ after submit.</p>
-                        <p>Your account statement will show the following booking text:
-                          XXXXXXX </p>
-                      </div>
-                    </div>
+                <div id="end-payment" class="komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div>                    
+                    <input type="checkbox" name="donor_email_opt_inname" id="donor_email_opt_inname" checked="checked">
+                    <label for="donor_email_opt_inname">
+                      Yes, I would like to receive&nbsp;emails from Susan G. Komen®
+                    </label>
                     <!-- Submit -->
-                    <div class="control-group">
-                      <div class="controls">
-                        <center>
-                          <button class="btn btn-success" type="submit">Pay Now</button>
-                        </center>
-                      </div>
-                    </div>
-                  </fieldset>
+                    <button class="step-button action-button finish-step" type="submit">SEND MY DONATION</button>
+                    <div class="payamount"><p class="amtmonies">$0.00</p><p class="amttimes">ONE-TIME DONATION</p></div>
+                  </div>
                 </div>
               </div>
           </form>
@@ -339,5 +327,6 @@
       </div>
       <!-- end row -->
     </div>
+    <!-- end container -->
   </body>
 </html>

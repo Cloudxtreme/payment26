@@ -58,7 +58,7 @@ div.card-data i {
   right: 23px!important;
 }
 
-/* SPECIFIC STYLES */
+/* PAY AMOUNT */
 
 .payamount {
     background-color: #f8dceb;
@@ -86,6 +86,75 @@ div.card-data i {
     font-weight: 400;
     margin-bottom: 0;
     font-size: 15px;
+}
+
+/* SUBSCRIBE */
+
+#donor_email_opt_inname {
+	width: 15px; 
+	height: 15px;
+}
+
+#end-payment > fieldset > label {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+input#donor_email_opt_inname[type=checkbox] {
+    display: none;
+}
+
+input#donor_email_opt_inname[type=checkbox] + i + label {
+    background: url("../img/checkboxes.png") no-repeat;
+    width: 100%;
+    display: inline-block;
+    padding: 8px 0 0 32px;
+    background-position: 0 3px;
+    height: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+input#donor_email_opt_inname[type=checkbox]:checked + i + label {
+    background: url("../img/checkboxes.png") no-repeat;
+    width: 100%;
+    display: inline-block;
+    padding: 8px 0 0 32px;
+    background-position: 0 3px;
+    height: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    background-position: 0 -27px;
+}
+
+/* SEND DONATION */
+
+div.button-container {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.step-button.action-button.finish-step {
+    background-color: #2cb0a5;
+    background-image: none;
+    border: 1px solid #2cb0a5;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: "Open Sans",sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    padding: 25px 75px;
+    text-align: center;
+}
+
+div#end-payment button.finish-step {
+	float: left;
+}
+
+div#end-payment div.payamount {
+	float: left;
+	margin-left: 45px;
+	margin-top: 0!important;
 }
 
 /* CALLOUTS */
@@ -159,5 +228,9 @@ div.card-data i {
 	h2 .glyphicon-asterisk.required {
 	  top: 29px!important;
 	  right: 7px!important;
+	}
+
+	div.container div.row {
+		margin: 0 0px 0 0px;
 	}
 }
