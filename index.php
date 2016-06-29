@@ -2,6 +2,8 @@
   require 'lib/Stripe.php';
   //var_dump($_POST);
   if ($_POST) {
+
+    var_dump($_POST);
     Stripe::setApiKey("sk_test_IUz6zrnBkj94Rheo7LpYIKXx");
     $error = '';
     $success = '';
@@ -284,7 +286,7 @@
                       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                         <!-- Street -->
                         <div class="form-group">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Street</label>
+                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Street Address, Apt. or Ste.#</label>
                           <input type="text" name="street" placeholder="Street" class="address form-control">
                         </div>
                       </div>

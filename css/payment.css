@@ -147,15 +147,7 @@ div.button-container {
     text-align: center;
 }
 
-div#end-payment button.finish-step {
-	float: left;
-}
 
-div#end-payment div.payamount {
-	float: left;
-	margin-left: 45px;
-	margin-top: 0!important;
-}
 
 /* CALLOUTS */
 
@@ -222,6 +214,18 @@ div#end-payment div.payamount {
 		top: 28px;
 		right: 35px;
 	}
+
+	/* SEND DONATION */
+
+	div#end-payment button.finish-step {
+	float: left;
+	}
+
+	div#end-payment div.payamount {
+		float: left;
+		margin-left: 45px;
+		margin-top: 0!important;
+	}
 }
 
 @media (max-width: 990px) {
@@ -233,4 +237,15 @@ div#end-payment div.payamount {
 	div.container div.row {
 		margin: 0 0px 0 0px;
 	}
+
+	/* SEND DONATION */
+
+	div#end-payment button.finish-step {
+		width: 100%;
+	}
+
+	div#end-payment div.payamount {		
+		margin-top: 20px!important;
+		width: 100%;
+	}	
 }
