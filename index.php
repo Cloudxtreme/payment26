@@ -81,9 +81,9 @@
           <form action="" method="POST" id="payment-form" class="form-horizontal">
             <div class="row">
               <h1>You decide.</h1>
-              <p>You now have the power to contribute directly to stage IV/ metastatic breast cancer research, general breast cancer research, or triple negative breast cancer research. Decide where your donation goes by simply selecting a button under “Where would you like your donation to be applied?”<br>
+              <p class="komen-p">You now have the power to contribute directly to stage IV/ metastatic breast cancer research, general breast cancer research, or triple negative breast cancer research. Decide where your donation goes by simply selecting a button under “Where would you like your donation to be applied?”<br>
                 Thank you - on behalf of everyone impacted by breast cancer everywhere - for joining with Komen to help save lives.</p>
-              <p><span class="glyphicon glyphicon-asterisk required"></span>required</p>
+              <p class="h6"><span class="glyphicon glyphicon-asterisk required"></span>required</p>
             </div>
               <!-- First 3 Rows -->
               <div class="row">
@@ -142,6 +142,8 @@
                 <div class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <!-- Form Name -->
                   <h2>Special Monthly Gift Offer</h2>
+                  <img class="col-xs-2 col-sm-2 col-md-2 col-lg-2" src="img/notepad.jpg" alt="Special Monthly Gift Offer">
+                  <p class="komen-p">Click on the checkbox above to enroll in our monthly giving program and give $25 or more a month to receive a free journal and pen after your third monthly gift. <sup>1</sup></p>
                 </div>
               </div>
               <div class="row">
@@ -150,26 +152,26 @@
                   <h2><span class="glyphicon glyphicon-asterisk required"></span>Where would you like your donation to be applied?</h2>
                   <div class="radio">
                     <input type="radio" name="fund_radio" id="donation-stageIV">
-                    <label for="donation-stageIV">Stage IV/ Metastatic Breast Cancer Research.</label>
+                    <label for="donation-stageIV">Stage IV/ Metastatic Breast Cancer Research. <sup>2</sup> </label>
                     <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content=" <strong>Stage IV/ Metastatic Breast Cancer Research</strong>
                     Your gift will help us support research that focuses on Stage IV/ Metastatic Breast Cancer Research—cancer that has spread beyond the breast to other organs which is responsible for nearly all breast cancer deaths (including 40,000 in the U.S. this year alone)."></span>
 
                   </div>
                   <div class="radio">
                     <input type="radio" name="fund_radio" id="donation-generalBC">
-                    <label for="generalBC">General Breast Cancer Research.</label>
+                    <label for="generalBC">General Breast Cancer Research. <sup>2</sup> </label>
                     <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content=" <strong>General Breast Cancer Research</strong>
                     Your gift will help us support the best breast cancer research, investigating everything from prevention through treatment and beyond."></span>
                   </div>
                   <div class="radio">
                     <input type="radio" name="fund_radio" id="donation-">
-                    <label for="donation-tripleNBC">Triple Negative Breast Cancer Research.</label>
+                    <label for="donation-tripleNBC">Triple Negative Breast Cancer Research. <sup>2</sup> </label>
                     <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="<strong>Triple Negative Breast Cancer Research</strong>
                     Your gift will help us support research focusing on triple negative breast cancer a highly aggressive form of breast cancer for which no targeted treatment currently exists."></span>
                   </div>
                   <div class="radio">
                     <input type="radio" name="fund_radio" id="donation-generalFund">
-                    <label for="generalFund">General Fund.</label>
+                    <label for="generalFund">General Fund. <sup>2</sup> </label>
                     <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="<strong> General Fund</strong>
                     Your gift will help us support research, education and support while providing information and other programs to assist women, men and families facing breast cancer, and general administrative costs."></span>
 
@@ -181,7 +183,7 @@
                 <div class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <fieldset>
                     <h2>Payment Information</h2>
-                    <p id="payment-information">All transactions conducted on this website are encrypted using a secure server to protect your privacy. View Privacy Policy.</p>
+                    <p  class="komen-p" id="payment-information">All transactions conducted on this website are encrypted using a secure server to protect your privacy. View Privacy Policy.</p>
                     <div class="payamount"><p class="amtmonies">$0.00</p><p class="amttimes">ONE-TIME DONATION</p></div>
                     <div class="row">
                       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
