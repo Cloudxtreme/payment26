@@ -62,7 +62,7 @@ div.card-data i {
 
 .payamount {
     background-color: #f8dceb;
-    border-radius: 5px;    
+    border-radius: 5px;
     padding: 15px 0px 15px 20px;
     text-align: center;
     width: 200px;
@@ -161,7 +161,7 @@ div#end-payment div.payamount {
 
 .komen-callout {
     background-color: #ffffff;
-    border-left: 2px solid #2CB0A5;    
+    border-left: 2px solid #2CB0A5;
     font-family: "Open Sans", sans-serif;
     font-size: 15px;
 }
@@ -180,6 +180,18 @@ div#end-payment div.payamount {
   font-weight: 100;
 }
 
+.komen-p{
+  font-size: 15px;
+  line-height: 1.5;
+  font-family: inherit;
+}
+.komen-img{
+    float: left;
+    width: 30%;
+}
+img + .komen-p{
+  margin-top: 20px;
+}
 /* MEDIA QUERIES */
 
 @media (min-width: 991px) {
