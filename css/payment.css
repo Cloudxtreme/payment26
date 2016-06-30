@@ -214,14 +214,31 @@ img + .komen-p{
   color: #ffffff;
 }
 
-#cont-don-amount{
+#cont-don-amount, #tribute_honoree_name_row{
   display: none;
 }
+#tribute_honoree_name_row{
+  margin-top: 25px;
+}
 
+#cont-tribute{
+  margin-top: 14px;
+
+}
+
+label.radio{
+  float: left;
+  box-sizing: border-box;
+  width: 45%;
+  font-weight: 300;
+}
 /* MEDIA QUERIES */
 @media (max-width:767px) {
   .btn-value{
     width: 30%;
+  }
+  label.radio{
+    width: 100%;
   }
 }
 @media (min-width: 991px) {

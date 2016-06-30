@@ -67,11 +67,26 @@
           </noscript>
           <script>
           $(function () {
-            $('[data-toggle="popover"]').popover({html:true,placement:"bottom"});
+            $('[data-toggle="popover"]').popover({html:true,placement:"bottom"}); // enable popovers
+
+            $("#monthly_donation").click(function(){
+              if( $('#monthly_donation').is(':checked') ) {
+                $('p.amttimes').text("MONTHLY DONATION");
+              } else{
+                $('p.amttimes').text("ONE-TIME DONATION");
+              }
+            });
+
+            $("#tribute_show_honor").click(function(){
+              if( $('#tribute_show_honor').is(':checked') ) {
+                $('#tribute_honoree_name_row').show();
+              } else {
+                $('#tribute_honoree_name_row').hide();
+              }
+            });
             $(".btn-value").click(function(){
               if(this.value){
                 $('#cont-don-amount').hide();
-
               } else {
                 $('#cont-don-amount').show();
               }
@@ -91,8 +106,8 @@
               $('p.amtmonies').text(str);
             }
 
-          })/*inicializa popover*/
-
+            monthly_donation
+          })
           </script>
           <div class="alert alert-danger" id="a_x200" style="display: none;"> <strong>Error!</strong> <span class="payment-errors"></span> </div>
           <pre>
@@ -148,18 +163,22 @@
                       <span class="glyphicon glyphicon-asterisk required"></span>
                       <label for="tribute_honoree_name">Person's Name or Occasion</label>
                       <input class="form-control" name="tribute_honoree_name" id="tribute_honoree_name" value="" maxlength="50" type="text" placeholder="Person's Name or Occasion">
+                      <div id="cont-tribute">
+                        <div class="">
+                          <span class="glyphicon glyphicon-asterisk required"></span>
+                          <label class="radio"><input type="radio" name="tribute_text" value="in_memory_of">In Memory of </label>
+                          <label class="radio"><input type="radio" name="tribute_text" value="in_honor_of">In Honor of </label>
+                        </div>
+                        <div class="">
+                          <label class="radio-inline"><input type="radio" name="tribute" value="no">No Thanks</label>
+                          <label class="radio-inline"><input type="radio" name="tribute" value="mail">Yes, Mail Card</label>
+                          <label class="radio-inline"><input type="radio" name="tribute" value="ecard">Yes, Send eCard</label>
+                        </div>
+                      </div>
                     </div>
-                    <div class="">
-                      <span class="glyphicon glyphicon-asterisk required"></span>
-                      <label class="radio-inline"><input type="radio" name="tribute_text" value="in_memory_of">In Memory of </label>
-                      <label class="radio-inline"><input type="radio" name="tribute_text" value="in_honor_of">In Honor of </label>
+
                     </div>
-                    <div class="">
-                      <label class="radio-inline"><input type="radio" name="tribute" value="no">No Thanks</label>
-                      <label class="radio-inline"><input type="radio" name="tribute" value="mail">Yes, Mail Card</label>
-                      <label class="radio-inline"><input type="radio" name="tribute" value="ecard">Yes, Send eCard</label>
-                    </div>
-                  </div>
+
                   <!-- Form Name -->
                 </div>
               </div>
