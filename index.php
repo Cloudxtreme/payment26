@@ -84,14 +84,17 @@
                 $('#tribute_honoree_name_row').hide();
               }
             });
+
             $(".btn-value").click(function(){
               if(this.value){
                 $('#cont-don-amount').hide();
               } else {
                 $('#cont-don-amount').show();
               }
-                $("#donation_amount").val(this.value);
-                changeText();
+              $("#donation_amount").val(this.value);
+              $("button.btn-value").removeClass("btn-value-selected");
+              $(this).addClass("btn-value-selected");
+              changeText();
             });
 
             $("#donation_amount").bind('input change',changeText);
@@ -224,7 +227,7 @@
               </div>
               <!-- Second 3 rows -->
               <div class="row">
-                <div class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div id="payment-information" class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <fieldset>
                     <h2>Payment Information</h2>
                     <p  class="komen-p" id="payment-information">All transactions conducted on this website are encrypted using a secure server to protect your privacy. View Privacy Policy.</p>
