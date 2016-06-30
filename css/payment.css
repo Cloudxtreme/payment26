@@ -225,9 +225,11 @@ img + .komen-p{
   margin-top: 14px;
 
 }
-
+span + label.radio{
+  display: inline-block;
+}
 label.radio{
-  float: left;
+  display: inline-block;
   box-sizing: border-box;
   width: 45%;
   font-weight: 300;
