@@ -29,7 +29,7 @@ P, LI, OL, UL, TABLE, TR, TH, TD, .Explicit {
 h1 {
 	text-align: left;
   color: #433931;
-  margin: 0px auto;
+  margin: 0px auto 30px auto;
   font-size: 45px;
 }
 
@@ -91,7 +91,7 @@ div.card-data i {
 /* SUBSCRIBE */
 
 #donor_email_opt_inname {
-	width: 15px; 
+	width: 15px;
 	height: 15px;
 }
 
@@ -177,6 +177,11 @@ div.button-container {
   line-height: 1.5;
   font-family: inherit;
 }
+
+.komen-no-top{
+  margin-top: 0;
+}
+
 .komen-img{
     float: left;
     width: 30%;
@@ -184,8 +189,41 @@ div.button-container {
 img + .komen-p{
   margin-top: 20px;
 }
-/* MEDIA QUERIES */
 
+/* BUTTONS FOR VALUE*/
+.btn-value{
+  width: 15%;
+  box-sizing: border-box;
+  font-family: "Open Sans",sans-serif;
+  font-weight: 600;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 17px;
+  border: 1px solid #2cb0a5;
+  border-radius: 5px;
+  color: #2cb0a5;
+  background-color: #ffffff;
+  height: 70px;
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+.btn-value-selected{
+  background-color: #2cb0a5;
+  color: #ffffff;
+}
+
+#cont-don-amount{
+  display: none;
+}
+
+/* MEDIA QUERIES */
+@media (max-width:767px) {
+  .btn-value{
+    width: 30%;
+  }
+}
 @media (min-width: 991px) {
 
 	/* CREDIT CARD DATA */
@@ -256,8 +294,8 @@ img + .komen-p{
 		width: 100%;
 	}
 
-	div#end-payment div.payamount {		
+	div#end-payment div.payamount {
 		margin-top: 20px!important;
 		width: 100%;
-	}	
+	}
 }

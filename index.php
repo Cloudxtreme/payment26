@@ -1,7 +1,7 @@
 <?php
   require 'lib/Stripe.php';
   if ($_POST) {
-    
+
     Stripe::setApiKey("sk_test_IUz6zrnBkj94Rheo7LpYIKXx");
     $error = '';
     $success = '';
@@ -66,7 +66,32 @@
             </div>
           </noscript>
           <script>
-          $(function () {$('[data-toggle="popover"]').popover({html:true,placement:"bottom"})})/*inicializa popover*/
+          $(function () {
+            $('[data-toggle="popover"]').popover({html:true,placement:"bottom"});
+            $(".btn-value").click(function(){
+              if(this.value){
+                $('#cont-don-amount').hide();
+
+              } else {
+                $('#cont-don-amount').show();
+              }
+                $("#donation_amount").val(this.value);
+                changeText();
+            });
+
+            $("#donation_amount").bind('input change',changeText);
+
+            function changeText(){
+              var val = $("#donation_amount").val();
+              if (val === "")
+                val = "0.00";
+
+              var str= "$ " + val;
+
+              $('p.amtmonies').text(str);
+            }
+
+          })/*inicializa popover*/
 
           </script>
           <div class="alert alert-danger" id="a_x200" style="display: none;"> <strong>Error!</strong> <span class="payment-errors"></span> </div>
@@ -82,30 +107,27 @@
             </span>
           <?php endif; ?>
           <form action="" method="POST" id="payment-form" class="form-horizontal">
-            <div class="row">
+            <div class="row komen-callout komen-section">
               <h1>You decide.</h1>
               <p class="komen-p">You now have the power to contribute directly to stage IV/ metastatic breast cancer research, general breast cancer research, or triple negative breast cancer research. Decide where your donation goes by simply selecting a button under “Where would you like your donation to be applied?”<br>
                 Thank you - on behalf of everyone impacted by breast cancer everywhere - for joining with Komen to help save lives.</p>
               <p class="h6"><span class="glyphicon glyphicon-asterisk required"></span>required</p>
             </div>
               <!-- First 3 Rows -->
-              <div class="row">
-                <div class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="row ">
+                <div class="komen-callout komen-section komen-no-top col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <h2><span class="glyphicon glyphicon-asterisk required"></span>Donation Amount</h2>
                   <div class="row">
-                    <input type="radio" name="choose_donation_amount" id="choose_donation_amount-1" value="25">
-                    <label for="choose_donation_amount-1">$25</label>
-                    <input type="radio" name="choose_donation_amount" id="choose_donation_amount-2" value="50">
-                    <label for="choose_donation_amount-2">$50</label>
-                    <input type="radio" name="choose_donation_amount" id="choose_donation_amount-3" value="100">
-                    <label for="choose_donation_amount-3">$100</label>
-                    <input type="radio" name="choose_donation_amount" id="choose_donation_amount-4" value="250">
-                    <label for="choose_donation_amount-4">$250</label>
-                    <input type="radio" name="choose_donation_amount" id="choose_donation_amount-5" value="500">
-                    <label for="choose_donation_amount-5">$500</label>
-                    <input type="radio" name="choose_donation_amount" id="choose_donation_amount-6" value="0">
-                    <label for="choose_donation_amount-6">OTHER</label>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                      <button class="btn-value  "type="button" value="25">$25</button>
+                      <button class="btn-value  "type="button" value="50">$50</button>
+                      <button class="btn-value  "type="button" value="100">$100</button>
+                      <button class="btn-value  "type="button" value="250">$250</button>
+                      <button class="btn-value   "type="button" value="500">$500</button>
+                      <button class="btn-value  "type="button" value="">OTHER</button>
+                    </div>
+
+                    <div id="cont-don-amount"class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                       <input class="form-control" type="text" name="donation_amount" id="donation_amount" placeholder="$0.00">
                     </div>
                   </div>
@@ -317,8 +339,8 @@
               </div>
               <div class="row">
                 <div id="end-payment" class="komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <div>  
-                    <input type="hidden" id="subscriber_country" name="subscriber_country">                  
+                  <div>
+                    <input type="hidden" id="subscriber_country" name="subscriber_country">
                     <input type="checkbox" name="subscribe" id="subscribe" checked="checked">
                     <label for="subscribe">
                       Yes, I would like to receive&nbsp;emails from Susan G. Komen®
