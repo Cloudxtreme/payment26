@@ -54,10 +54,10 @@ h2 {
     color: #C60070;
 }
 
-div.card-data i {
+/*div.card-data i.form-control-feedback {
   top: 28px!important;
   right: 23px!important;
-}
+}*/
 
 /* PAY AMOUNT */
 
@@ -251,7 +251,13 @@ label.radio{
     width: 100%;
   }
 }
+
 @media (min-width: 991px) {
+
+
+}
+
+@media (min-width: 1199px) {
 
 	/* CREDIT CARD DATA */
 
@@ -271,6 +277,8 @@ label.radio{
 	  top: 28px!important;
 	  right: 23px!important;
 	}
+
+
 
 	/* YOUR INFORMATION */
 
@@ -292,9 +300,10 @@ label.radio{
 		right: 35px;
 	}
 
-}
-
-@media (min-width: 1199px) {
+  #payment-information i.form-control-feedback {
+    top: 28px!important;
+    right: 22px!important;
+  }
 	
   /* SEND DONATION */
 
@@ -314,18 +323,29 @@ label.radio{
 }
 
 @media (max-width: 1199px) {
-	/* SEND DONATION */
+  /* SEND DONATION */
 
-	div#end-payment button.finish-step {
-		width: 100%;
-	}
+  div#end-payment button.finish-step {
+    width: 100%;
+  }
 
-	div#end-payment div.payamount {
-		margin-top: 20px!important;
-		width: 100%;
-	}
+  div#end-payment div.payamount {
+    margin-top: 20px!important;
+    width: 100%;
+  }
 
   #payment-information > fieldset > div.payamount {
+    width: 100%;
+  }
+
+  /* VALIDATION ICONS */
+
+  #payment-information fieldset i.form-control-feedback, #billing-details fieldset i.form-control-feedback, #your-information fieldset i.form-control-feedback {
+    top: 29px;
+    right: 6px;
+  }
+
+  #payment-information > fieldset > div.row > div.col-xs-12.col-sm-12.col-md-12.col-lg-6 > div > div > select {
     width: 100%;
   }
 }
