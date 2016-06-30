@@ -203,6 +203,9 @@ $(document).ready(function() {
   for (var i = 0; i < 12; i++) {
       select.append($("<option value='"+(i + year)+"' "+(i === 0 ? "selected" : "")+">"+(i + year)+"</option>"))
   }
+  
+  $("a[data-option='US']").trigger("click");
+  $("#billing-details > fieldset > div:nth-child(1) > div > div > div > a > span.bfh-selectbox-option").append('<span style="color:red; float:right;">CHANGE COUNTRY</span>');
 });
 
 // this identifies your website in the createToken call below

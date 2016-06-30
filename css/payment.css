@@ -307,6 +307,10 @@ label.radio{
 		margin-left: 45px;
 		margin-top: 0!important;
 	}
+
+  #billing-details > fieldset > div:nth-child(1) > div > div > div > a {
+    border-color: white;
+  }
 }
 
 @media (max-width: 1199px) {
