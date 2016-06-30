@@ -209,20 +209,24 @@ $(document).ready(function() {
 Stripe.setPublishableKey('pk_test_Fn23ogInSLReU7YxlCJc7Hl9');
 
 function stripeResponseHandler(status, response) {
+    $('#subscriber_country[type="hidden"]').val($('.bfh-countries input[type="hidden"]').val());
     if (response.error) {
-        // re-enable the submit button
-        $('.submit-button').removeAttr("disabled");
-        // show hidden div
-        document.getElementById('a_x200').style.display = 'block';
-        // show the errors on the form
-        $(".payment-errors").html(response.error.message);
-    } else {
-        var form$ = $("#payment-form");
-        // token contains id, last4, and card type
-        var token = response['id'];
-        // insert the token into the form so it gets submitted to the server
-        form$.append("<input type='hidden' name='stripeToken' value='" + token + "' />");
-        // and submit
-        form$.get(0).submit();
+      // re-enable the submit button
+      $('.submit-button').removeAttr("disabled");
+      // show hidden div
+      document.getElementById('a_x200').style.display = 'block';
+      // show the errors on the form
+      $(".payment-errors").html(response.error.message);
+    } 
+    else {
+      var form$ = $("#payment-form");
+      // token contains id, last4, and card type
+      var token = response['id'];
+      // insert the token into the form so it gets submitted to the server
+      form$.append("<input type='hidden' name='stripeToken' value='" + token + "' />");
+      //set country field id
+      // and submit
+      //console.log($('#subscriber_country[type="hidden"]').val());
+      form$.get(0).submit();
     }
 }

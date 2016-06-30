@@ -1,9 +1,7 @@
 <?php
   require 'lib/Stripe.php';
-  //var_dump($_POST);
   if ($_POST) {
-
-    var_dump($_POST);
+    
     Stripe::setApiKey("sk_test_IUz6zrnBkj94Rheo7LpYIKXx");
     $error = '';
     $success = '';
@@ -72,6 +70,11 @@
 
           </script>
           <div class="alert alert-danger" id="a_x200" style="display: none;"> <strong>Error!</strong> <span class="payment-errors"></span> </div>
+          <pre>
+            <?php
+                print_r($_POST);
+            ?>
+          </pre>
           <?php if (isset($success) || isset($error)): ?>
             <span class="payment-success">
               <?= $success ?>
@@ -90,49 +93,49 @@
                 <div class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
                   <h2><span class="glyphicon glyphicon-asterisk required"></span>Donation Amount</h2>
                   <div class="row">
-                    <input type="radio" name="donation-level" id="donation-level-1" value="25">
-                    <label for="donation-level-1">$25</label>
-                    <input type="radio" name="donation-level" id="donation-level-2" value="50">
-                    <label for="donation-level-2">$50</label>
-                    <input type="radio" name="donation-level" id="donation-level-3" value="100">
-                    <label for="donation-level-3">$100</label>
-                    <input type="radio" name="donation-level" id="donation-level-4" value="250">
-                    <label for="donation-level-4">$250</label>
-                    <input type="radio" name="donation-level" id="donation-level-5" value="500">
-                    <label for="donation-level-5">$500</label>
-                    <input type="radio" name="donation-level" id="donation-level-6" value="0">
-                    <label for="donation-level-6">OTHER</label>
+                    <input type="radio" name="choose_donation_amount" id="choose_donation_amount-1" value="25">
+                    <label for="choose_donation_amount-1">$25</label>
+                    <input type="radio" name="choose_donation_amount" id="choose_donation_amount-2" value="50">
+                    <label for="choose_donation_amount-2">$50</label>
+                    <input type="radio" name="choose_donation_amount" id="choose_donation_amount-3" value="100">
+                    <label for="choose_donation_amount-3">$100</label>
+                    <input type="radio" name="choose_donation_amount" id="choose_donation_amount-4" value="250">
+                    <label for="choose_donation_amount-4">$250</label>
+                    <input type="radio" name="choose_donation_amount" id="choose_donation_amount-5" value="500">
+                    <label for="choose_donation_amount-5">$500</label>
+                    <input type="radio" name="choose_donation_amount" id="choose_donation_amount-6" value="0">
+                    <label for="choose_donation_amount-6">OTHER</label>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                      <input class="form-control" type="text" name="" id="" placeholder="$0.00">
+                      <input class="form-control" type="text" name="donation_amount" id="donation_amount" placeholder="$0.00">
                     </div>
                   </div>
                   <div class="checkbox">
-                    <input type="checkbox" name="" id="level_standardauto_repeatname">
-                    <label for="level_standardauto_repeatname"> Make this my monthly donation.</label>
+                    <input type="checkbox" checked="checked" name="monthly_donation" id="monthly_donation">
+                    <label for="monthly_donation"> Make this my monthly donation.</label>
                     <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="If selected, you will be enrolled in our monthly program. Your monthly gift will be processed automatically with the credit card information you have provided.<br><a href='http://ww5.komen.org/HelpFAQ/HelpFAQs.html' target='_blank'>Learn More</a>"></span>
                   </div>
                   <div class="checkbox">
-                    <input type="checkbox" name="" id="tribute_show_honor_fieldsname">
-                    <label for="tribute_show_honor_fieldsname">Make my gift in honor or memory of a friend or loved one.</label>
+                    <input type="checkbox" checked="checked" name="tribute_show_honor" id="tribute_show_honor">
+                    <label for="tribute_show_honor">Make my gift in honor or memory of a friend or loved one.</label>
                     <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="<strong>Honorariums</strong> are a great way to show your appreciation for a special someone by making a donation to Susan G. Komen® in their name. Honor gifts are perfect for anniversaries, birthdays and other special events.<br>
                     <strong>A Memorial gift</strong> is a beautiful tribute to the life of a loved one who has passed on. "></span>
                   </div>
 
-                  <div id="tribute_honoree_last_name_row">
+                  <div id="tribute_honoree_name_row">
                     <div class="form-content col-xs-12 col-sm-12 col-md-12 col-lg-12">
                       <span class="glyphicon glyphicon-asterisk required"></span>
-                      <label for="tribute_honoree_last_namename">Person's Name or Occasion</label>
-                      <input class="form-control" name="tribute_honoree_last_namename" id="tribute_honoree_last_namename" value="" maxlength="50" type="text" placeholder="Person's Name or Occasion">
+                      <label for="tribute_honoree_name">Person's Name or Occasion</label>
+                      <input class="form-control" name="tribute_honoree_name" id="tribute_honoree_name" value="" maxlength="50" type="text" placeholder="Person's Name or Occasion">
                     </div>
                     <div class="">
                       <span class="glyphicon glyphicon-asterisk required"></span>
-                      <label class="radio-inline"><input type="radio" name="tribute_type_text" value="tribute_type_value1">In Memory of </label>
-                      <label class="radio-inline"><input type="radio" name="tribute_type_text" value="tribute_type_value2">In Honor of </label>
+                      <label class="radio-inline"><input type="radio" name="tribute_text" value="in_memory_of">In Memory of </label>
+                      <label class="radio-inline"><input type="radio" name="tribute_text" value="in_honor_of">In Honor of </label>
                     </div>
                     <div class="">
-                      <label class="radio-inline"><input type="radio" name="send_tribute_radio" value="No_Thanks">No Thanks</label>
-                      <label class="radio-inline"><input type="radio" name="send_tribute_radio" value="Yes_Mail_Card">Yes, Mail Card</label>
-                      <label class="radio-inline"><input type="radio" name="send_tribute_radio" value="Yes_eCard">Yes, Send eCard</label>
+                      <label class="radio-inline"><input type="radio" name="tribute" value="no">No Thanks</label>
+                      <label class="radio-inline"><input type="radio" name="tribute" value="mail">Yes, Mail Card</label>
+                      <label class="radio-inline"><input type="radio" name="tribute" value="ecard">Yes, Send eCard</label>
                     </div>
                   </div>
                   <!-- Form Name -->
@@ -151,27 +154,27 @@
                   <!-- Form Name -->
                   <h2><span class="glyphicon glyphicon-asterisk required"></span>Where would you like your donation to be applied?</h2>
                   <div class="radio">
-                    <input type="radio" name="fund_radio" id="donation-stageIV">
-                    <label for="donation-stageIV">Stage IV/ Metastatic Breast Cancer Research. <sup>2</sup> </label>
+                    <input type="radio" name="fund_destination" value="stage4" id="donation-stage4">
+                    <label for="donation-stage4">Stage IV/ Metastatic Breast Cancer Research. <sup>2</sup> </label>
                     <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content=" <strong>Stage IV/ Metastatic Breast Cancer Research</strong>
                     Your gift will help us support research that focuses on Stage IV/ Metastatic Breast Cancer Research—cancer that has spread beyond the breast to other organs which is responsible for nearly all breast cancer deaths (including 40,000 in the U.S. this year alone)."></span>
 
                   </div>
                   <div class="radio">
-                    <input type="radio" name="fund_radio" id="donation-generalBC">
-                    <label for="generalBC">General Breast Cancer Research. <sup>2</sup> </label>
+                    <input type="radio" name="fund_destination" value="general-bc" id="donation-general-bc">
+                    <label for="donation-general-bc">General Breast Cancer Research. <sup>2</sup> </label>
                     <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content=" <strong>General Breast Cancer Research</strong>
                     Your gift will help us support the best breast cancer research, investigating everything from prevention through treatment and beyond."></span>
                   </div>
                   <div class="radio">
-                    <input type="radio" name="fund_radio" id="donation-">
-                    <label for="donation-tripleNBC">Triple Negative Breast Cancer Research. <sup>2</sup> </label>
+                    <input type="radio" name="fund_destination" value="triple-nbc" id="donation-triple-nbc">
+                    <label for="donation-triple-nbc">Triple Negative Breast Cancer Research. <sup>2</sup> </label>
                     <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="<strong>Triple Negative Breast Cancer Research</strong>
                     Your gift will help us support research focusing on triple negative breast cancer a highly aggressive form of breast cancer for which no targeted treatment currently exists."></span>
                   </div>
                   <div class="radio">
-                    <input type="radio" name="fund_radio" id="donation-generalFund">
-                    <label for="generalFund">General Fund. <sup>2</sup> </label>
+                    <input type="radio" name="fund_destination" value="general-fund" id="donation-general-fund">
+                    <label for="donation-general-fund">General Fund. <sup>2</sup> </label>
                     <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="<strong> General Fund</strong>
                     Your gift will help us support research, education and support while providing information and other programs to assist women, men and families facing breast cancer, and general administrative costs."></span>
 
@@ -205,7 +208,7 @@
                         <div class="form-group card-data">
                           <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Expiration Date:</label>
                           <div class="form-inline">
-                            <select name="select2" data-stripe="exp-month" class="card-expiry-month stripe-sensitive required form-control">
+                            <select data-stripe="exp-month" class="card-expiry-month stripe-sensitive required form-control">
                               <option value="01" selected="selected">01</option>
                               <option value="02">02</option>
                               <option value="03">03</option>
@@ -220,7 +223,7 @@
                               <option value="12">12</option>
                             </select>
                             <span> / </span>
-                            <select name="select2" data-stripe="exp-year" class="card-expiry-year stripe-sensitive required form-control">
+                            <select data-stripe="exp-year" class="card-expiry-year stripe-sensitive required form-control">
                             </select>
                           </div>
                         </div>
@@ -239,11 +242,11 @@
                         <!-- Card Holder Name -->
                         <div class="form-group">
                           <label class="control-label"  for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>First name</label>
-                          <input type="text" name="cardholdername" maxlength="70" placeholder="Card Holder Name" class="card-holder-name form-control">
+                          <input type="text" name="card_holder_name" maxlength="70" placeholder="Card Holder Name" class="card-holder-name form-control">
                         </div>
                         <div class="form-group">
                           <label class="control-label"  for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Last Name</label>
-                          <input type="text" name="cardholdersurname" maxlength="70" placeholder="Card Holder Surname" class="card-holder-surname form-control">
+                          <input type="text" name="card_holder_surname" maxlength="70" placeholder="Card Holder Surname" class="card-holder-surname form-control">
                         </div>
                       </div>
                       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
@@ -314,9 +317,10 @@
               </div>
               <div class="row">
                 <div id="end-payment" class="komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <div>                    
-                    <input type="checkbox" name="donor_email_opt_inname" id="donor_email_opt_inname" checked="checked">
-                    <label for="donor_email_opt_inname">
+                  <div>  
+                    <input type="hidden" id="subscriber_country" name="subscriber_country">                  
+                    <input type="checkbox" name="subscribe" id="subscribe" checked="checked">
+                    <label for="subscribe">
                       Yes, I would like to receive&nbsp;emails from Susan G. Komen®
                     </label>
                     <!-- Submit -->
