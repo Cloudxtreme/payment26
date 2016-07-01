@@ -68,6 +68,20 @@
           <script>
           $(function () {
             $('[data-toggle="popover"]').popover({html:true,placement:"bottom"}); // enable popovers
+            $("#no-thanks").click(function(){
+                $('#send-ecard').hide();
+                $('#mail-card').hide();
+            });
+
+            $("#yes-mail-card").click(function(){
+                $('#send-ecard').hide();
+                $('#mail-card').show();
+            });
+
+            $("#yes-send-ecard").click(function(){
+                $('#send-ecard').show();
+                $('#mail-card').hide();
+            });
 
             $("#monthly_donation").click(function(){
               if( $('#monthly_donation').is(':checked') ) {
@@ -109,7 +123,7 @@
               $('p.amtmonies').text(str);
             }
 
-            monthly_donation
+
           })
           </script>
           <div class="alert alert-danger" id="a_x200" style="display: none;"> <strong>Error!</strong> <span class="payment-errors"></span> </div>
@@ -173,9 +187,107 @@
                           <label class="radio"><input type="radio" name="tribute_text" value="in_honor_of">In Honor of </label>
                         </div>
                         <div class="">
-                          <label class="radio-inline"><input type="radio" name="tribute" value="no">No Thanks</label>
-                          <label class="radio-inline"><input type="radio" name="tribute" value="mail">Yes, Mail Card</label>
-                          <label class="radio-inline"><input type="radio" name="tribute" value="ecard">Yes, Send eCard</label>
+                          <label  class="radio-inline"><input id="no-thanks" type="radio" name="tribute" value="no">No Thanks</label>
+                          <label class="radio-inline"><input id="yes-mail-card" type="radio" name="tribute" value="mail">Yes, Mail Card</label>
+                          <label class="radio-inline"><input id="yes-send-ecard" type="radio" name="tribute" value="ecard">Yes, eCard</label>
+                          <div id="send-ecard">
+                            <div>
+                              <label for="" class="send-ecard"> Send eCard on:</label>
+                              <select class="form-control komen-date" name="ecard_send_date_MONTH" id="ecard_send_date_MONTH" title="Month">
+                                <option value="1">Jan</option>
+                                <option value="2">Feb</option>
+                                <option value="3">Mar</option>
+                                <option value="4">Apr</option>
+                                <option value="5">May</option>
+                                <option value="6" selected="selected">Jun</option>
+                                <option value="7">Jul</option>
+                                <option value="8">Aug</option>
+                                <option value="9">Sep</option>
+                                <option value="10">Oct</option>
+                                <option value="11">Nov</option>
+                                <option value="12">Dec</option>
+                              </select>
+                              <select class="form-control komen-date" name="ecard_send_date_DAY" id="ecard_send_date_DAY" title="Day">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30" selected="selected">30</option>
+                                <option value="31">31</option>
+                              </select>
+                              <select class="form-control komen-date" name="ecard_send_date_YEAR" id="ecard_send_date_YEAR" title="Year">
+                                <option value="2026">2026</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016" selected="selected">2016</option>
+                              </select>
+                            </div>
+                            <div class="">
+                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span>Recipient email addresses:</label>
+                              <textarea class="form-control" name="name" rows="6"></textarea>
+                            </div>
+                            <div class="">
+                              <label for="ecard1" class="komen-ecard-image"><img src="img/ecard1.png" alt=""><input type="radio" name="e-cards" id="ecard1"></label>
+                              <label for="ecard2" class="komen-ecard-image"><img src="img/ecard2.png" alt=""><input type="radio" name="e-cards" id="ecard2"></label>
+                              <label for="ecard3" class="komen-ecard-image"><img src="img/ecard3.png" alt=""><input type="radio" name="e-cards" id="ecard3"></label>
+                              <label for="ecard4" class="komen-ecard-image"><img src="img/ecard4.png" alt=""><input type="radio" name="e-cards" id="ecard4"></label>
+                              <label for="ecard5" class="komen-ecard-image"><img src="img/ecard5.png" alt=""><input type="radio" name="e-cards" id="ecard5"></label>
+                              <label for="ecard6" class="komen-ecard-image"><img src="img/ecard6.png" alt=""><input type="radio" name="e-cards" id="ecard6"></label>
+                            </div>
+                            <div class="">
+                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span>eCard Subject:</label>
+                              <input data-bv-field="" class="form-control" name="" id="" value="" maxlength="50" placeholder="eCard Subject" type="text">
+                            </div>
+                            <div class="">
+                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span>Recipient email addresses:</label>
+                              <textarea class="form-control" name="" rows="6"></textarea>
+                            </div>
+                            <button class="step-button action-button finish-step" type="submit" name="nullbtn" id="nullbtn" value="eCard Preview" title="Reloads page. ">
+                            eCard Preview
+                            </button>
+                            <label class="checkbox"><input name="e_card_copy_sendername" id="e_card_copy_sendername" type="checkbox">Yes, send me a copy of the eCard.</label>
+                          </div>
+                          <div id="mail-card">
+                            <p class="komen-p">Type your name exactly as you would like it to appear in the signature of the tribute card.</p>
+                            <div>
+                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span>eCard Message:</label>
+                              <input data-bv-field="" class="form-control" name="" id="" value="" maxlength="50" placeholder="eCard Message" type="text">
+                            </div>
+                            <label class="radio" ><input  type="radio" name="tribute_card_destination" id="">I would like the Tribute Card sent to me.</label>
+                            <label class="radio" ><input  type="radio" name="tribute_card_destination" id="">I would like Komen to send a Tribute Card for me.</label>
+                          </div>
                         </div>
                       </div>
                     </div>

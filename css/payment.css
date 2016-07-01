@@ -216,7 +216,7 @@ img + .komen-p{
   color: #ffffff;
 }
 
-#cont-don-amount, #tribute_honoree_name_row{
+#cont-don-amount, #tribute_honoree_name_row, #send-ecard ,#mail-card{
   display: none;
 }
 #tribute_honoree_name_row{
@@ -228,6 +228,22 @@ img + .komen-p{
 
 }
 
+#cont-tribute>div:first-child{
+    margin-bottom: 14px;
+}
+label.checkbox{
+  font-weight: 300;
+  cursor: pointer;
+}
+#mail-card{
+  margin-top:24px;
+}
+#mail-card label.radio{
+  width: 100%;
+}
+#mail-card>div:first-of-type{
+  margin-bottom: 15px;
+}
 span + label.radio{
   display: inline-block;
 }
@@ -239,16 +255,63 @@ label.radio{
   font-weight: 300;
 }
 
+label.komen-ecard-image{
+  width: 46%;
+  margin: 0 1%;
+  box-sizing: border-box;
+  margin-bottom: 14px;
+}
+label.komen-ecard-image>img{
+  width: 100%;
+}
+label.komen-ecard-image>input{
+  display: block;
+  margin: 8px auto;
+}
+
+#send-ecard>div{
+  margin-top:24px;
+}
+label.send-ecard{
+  width: 100%;
+}
+.komen-date{
+  width: 20%;
+  margin: 0 6px;
+  display: inline-block;
+}
+
+textarea{
+  resize: none;
+}
+
+#nullbtn{
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+  display: block;
+  width: 60%;
+  margin: 25px auto;
+}
+label.radio-inline{
+  width: 30%;
+}
 /* MEDIA QUERIES */
 
 @media (max-width:767px) {
-  
+  label.radio-inline{
+    width: 100%;
+  }
+  label.komen-ecard-image{
+    width: 100%;
+    margin: 0;
+  }
   .btn-value{
     width: 30%;
   }
 
   label.radio{
-    width: 100%;
+    width: 90%;
   }
 }
 
@@ -304,7 +367,7 @@ label.radio{
     top: 28px!important;
     right: 22px!important;
   }
-	
+
   /* SEND DONATION */
 
 	div#end-payment button.finish-step {
