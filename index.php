@@ -110,8 +110,8 @@
                     <p>We will automatically receive your gift each month.</p>
                   </div>
                   <div class="checkbox">
-                    <input type="checkbox" name="tribute_show_honor" id="tribute_show_honor">
-                    <label for="tribute_show_honor">Make my gift in honor or memory of a friend or loved one.</label>
+                    <input type="checkbox" name="tribute_show_honor_or_memory" id="tribute_show_honor_or_memory">
+                    <label for="tribute_show_honor_or_memory">Make my gift in honor or memory of a friend or loved one.</label>
                     <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="<strong>Honorariums</strong> are a great way to show your appreciation for a special someone by making a donation to Susan G. Komen® in their name. Honor gifts are perfect for anniversaries, birthdays and other special events.<br>
                     <strong>A Memorial gift</strong> is a beautiful tribute to the life of a loved one who has passed on. "></span>
                   </div>
@@ -128,9 +128,10 @@
                           <label class="radio"><input type="radio" name="tribute_text" value="in_honor_of">In Honor of </label>
                         </div>
                         <div class="">
-                          <label  class="radio-inline"><input id="no-thanks" type="radio" name="tribute" value="no">No Thanks</label>
-                          <label class="radio-inline"><input id="yes-mail-card" type="radio" name="tribute" value="mail">Yes, Mail Card</label>
-                          <label class="radio-inline"><input id="yes-send-ecard" type="radio" name="tribute" value="ecard">Yes, Send eCard</label>
+                          <label for="tribute">Do you want to send a Tribute Card?</label>
+                          <label  class="radio-inline"><input id="no-thanks" type="radio" name="send_tribute_card" value="no">No Thanks</label>
+                          <label class="radio-inline"><input id="yes-send-ecard" type="radio" name="send_tribute_card" value="ecard">Yes, Send eCard</label>
+                          <label class="radio-inline"><input id="yes-mail-card" type="radio" name="send_tribute_card" value="mail">Yes, Mail Card</label>
                           <div id="send-ecard">
                             <div>
                               <label for="" class="send-ecard"> Send eCard on:</label>
@@ -197,22 +198,22 @@
                             </div>
                             <div class="">
                               <label for=""><span class="glyphicon glyphicon-asterisk required"></span>Recipient email addresses:</label>
-                              <textarea class="form-control" name="recipient_email_addresses" id="recipient_email_addresses" rows="6"></textarea>
+                              <textarea class="form-control" name="ecard_recipient_email_addresses" id="ecard_recipient_email_addresses" rows="6"></textarea>
                             </div>
                             <div class="">
-                              <label for="ecard1" class="komen-ecard-image"><img src="img/ecard1.png" alt=""><input type="radio" name="e-cards" id="ecard1" value="ecard1"></label>
-                              <label for="ecard2" class="komen-ecard-image"><img src="img/ecard2.png" alt=""><input type="radio" name="e-cards" id="ecard2" value="ecard2"></label>
-                              <label for="ecard3" class="komen-ecard-image"><img src="img/ecard3.png" alt=""><input type="radio" name="e-cards" id="ecard3" value="ecard3"></label>
-                              <label for="ecard4" class="komen-ecard-image"><img src="img/ecard4.png" alt=""><input type="radio" name="e-cards" id="ecard4" value="ecard4"></label>
-                              <label for="ecard5" class="komen-ecard-image"><img src="img/ecard5.png" alt=""><input type="radio" name="e-cards" id="ecard5" value="ecard5"></label>
-                              <label for="ecard6" class="komen-ecard-image"><img src="img/ecard6.png" alt=""><input type="radio" name="e-cards" id="ecard6" value="ecard6"></label>
+                              <label for="ecard1" class="komen-ecard-image"><img src="img/ecard1.png" alt=""><input type="radio" name="selected_ecard" id="ecard1" value="ecard1"></label>
+                              <label for="ecard2" class="komen-ecard-image"><img src="img/ecard2.png" alt=""><input type="radio" name="selected_ecard" id="ecard2" value="ecard2"></label>
+                              <label for="ecard3" class="komen-ecard-image"><img src="img/ecard3.png" alt=""><input type="radio" name="selected_ecard" id="ecard3" value="ecard3"></label>
+                              <label for="ecard4" class="komen-ecard-image"><img src="img/ecard4.png" alt=""><input type="radio" name="selected_ecard" id="ecard4" value="ecard4"></label>
+                              <label for="ecard5" class="komen-ecard-image"><img src="img/ecard5.png" alt=""><input type="radio" name="selected_ecard" id="ecard5" value="ecard5"></label>
+                              <label for="ecard6" class="komen-ecard-image"><img src="img/ecard6.png" alt=""><input type="radio" name="selected_ecard" id="ecard6" value="ecard6"></label>
                             </div>
                             <div class="">
                               <label for=""><span class="glyphicon glyphicon-asterisk required"></span>eCard Subject:</label>
                               <input data-bv-field="" class="form-control" name="ecard_subject" id="ecard_subject" value="" maxlength="50" placeholder="eCard Subject" type="text">
                             </div>
                             <div class="">
-                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span> eCard Message::</label>
+                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span> eCard Message:</label>
                               <textarea class="form-control" id="ecard_message" name="ecard_message" rows="6"></textarea>
                             </div>
                             <button class="step-button action-button finish-step" type="submit" name="nullbtn" id="nullbtn" value="eCard Preview" title="Reloads page. ">
@@ -223,37 +224,37 @@
                           <div id="mail-card">
                             <p class="komen-p">Type your name exactly as you would like it to appear in the signature of the tribute card.</p>
                             <div>
-                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span>eCard Message:</label>
-                              <input data-bv-field="" class="form-control" name="e_card_message" id="e_card_message" value="" maxlength="50" placeholder="eCard Message" type="text">
+                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span>Tribute Card Signature (50 characters or less) </label>
+                              <input data-bv-field="" class="form-control" name="mail_tribute_card_signature" id="mail_tribute_card_signature" value="" maxlength="50" placeholder="Tribute Card Signature" type="text">
                             </div>
-                            <label class="radio" ><input id="card-destination-1" type="radio" name="tribute_card_destination" id="">I would like the Tribute Card sent to me.</label>
-                            <label class="radio" ><input id="card-destination-2" type="radio" name="tribute_card_destination" id="">I would like Komen to send a Tribute Card for me.</label>
+                            <label class="radio" ><input id="card-destination-1" type="radio" name="mail_tribute_card_destination" id="mail_tribute_card_destination" value="card-destination-1">I would like the Tribute Card sent to me.</label>
+                            <label class="radio" ><input id="card-destination-2" type="radio" name="mail_tribute_card_destination" id="mail_tribute_card_destination" value="card-destination-2">I would like Komen to send a Tribute Card for me.</label>
                             <div id="tribute-card-me">
                               <p>Supply the name and address of the person to whom you would like the tribute card sent.</p>
                               <h5>Tribute Card Recipient Address</h5>
                               <div>
                                 <label class="control-label" for="">Tribute Recipient Name:</label>
-                                <input class="form-control" type="text" name="" id="" placeholder="Name">
+                                <input class="form-control" type="text" name="mail_tribute_card_recipient_name" id="mail_tribute_card_recipient_name" placeholder="Name">
                               </div>
                               <div>
                                 <label class="control-label" for="">Tribute Recipient Street 1:</label>
-                                <input class="form-control" type="text" name="" id="" placeholder="Street">
+                                <input class="form-control" type="text" name="mail_tribute_card_recipient_street" id="mail_tribute_card_recipient_street" placeholder="Street">
                               </div>
                               <div>
                                 <label class="control-label" for="">Tribute Recipient City:</label>
-                                <input class="form-control" type="text" name="" id="" placeholder="City">
+                                <input class="form-control" type="text" name="mail_tribute_card_recipient_city" id="mail_tribute_card_recipient_city" placeholder="City">
                               </div>
                               <div>
                                 <label class="control-label" for="">Tribute Recipient State/Province:</label>
-                                <input class="form-control" type="text" name="" id="" maxlength="65" placeholder="State/Province">
+                                <input class="form-control" type="text" name="mail_tribute_card_recipient_state" id="mail_tribute_card_recipient_state" maxlength="65" placeholder="State/Province">
                               </div>
                               <div>
                                 <label class="control-label" for="">Tribute Recipient ZIP/Postal Code:</label>
-                                <input class="form-control" type="text" name="" id="" maxlength="6" placeholder="ZIP/Postal Code">
+                                <input class="form-control" type="text" name="mail_tribute_card_recipient_zip" id="mail_tribute_card_recipient_zip" maxlength="6" placeholder="ZIP/Postal Code">
                               </div>
                               <div>
                                 <label class="control-label" for="">Tribute Recipient Country:</label>
-                                <input class="form-control" type="text" name="" id="">
+                                <input class="form-control" type="text" name="mail_tribute_card_recipient_country" id="mail_tribute_card_recipient_country">
                               </div>
                             </div>
                           </div>
@@ -273,7 +274,7 @@
                   <img class="col-xs-2 col-sm-2 col-md-2 col-lg-2" src="img/notepad.jpg" alt="Special Monthly Gift Offer">
                   <p class="komen-p">Click on the checkbox above to enroll in our monthly giving program and give $25 or more a month to receive a free journal and pen after your third monthly gift. <sup>1</sup></p>
                   <input type="checkbox" name="premium_gift_optout" id="premium_gift_optout">
-                    <label for="subscribe">
+                    <label for="premium_gift_optout">
                       I do not want to receive the journal and pen
                     </label>
                 </div>

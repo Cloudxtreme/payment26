@@ -61,8 +61,8 @@ $(function () {
     }
   });
 
-  $("#tribute_show_honor").click(function(){
-    if( $('#tribute_show_honor').is(':checked') ) {
+  $("#tribute_show_honor_or_memory").click(function(){
+    if( $('#tribute_show_honor_or_memory').is(':checked') ) {
       $('#tribute_honoree_name_row').show();
     } else {
       $('#tribute_honoree_name_row').hide();
@@ -320,6 +320,7 @@ function stripeResponseHandler(status, response) {
       $(".payment-errors").html(response.error.message);
     }
     else {
+      
       var form$ = $("#payment-form");
       // token contains id, last4, and card type
       var token = response['id'];
