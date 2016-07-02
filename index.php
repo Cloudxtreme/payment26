@@ -52,13 +52,13 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-4 col-lg-4 col-xs-12">
+        <div id="komen-donate">
           <div class="sidebar_donate">
             <p><strong>DONATE BY PHONE</strong></p>
             <p>1-877 GO KOMEN <br>(1-877-465-6636, option 4)</p>
           </div>
         </div>
-        <div class="col-md-7  col-lg-7 col-xs-12">
+        <div id="komen-form">
           <noscript>
             <div class="bs-callout bs-callout-danger">
               <h4>JavaScript is not enabled!</h4>
@@ -318,14 +318,14 @@
                     <p  class="komen-p" id="payment-information">All transactions conducted on this website are encrypted using a secure server to protect your privacy. View Privacy Policy.</p>
                     <div class="payamount"><p class="amtmonies">$0.00</p><p class="amttimes">ONE-TIME DONATION</p></div>
                     <div class="row">
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                         <!-- Card Number -->
                         <div class="form-group card-data">
                           <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Credit Card Number:</label>
                           <input type="text" id="cardnumber" maxlength="19" placeholder="Card Number" class="card-number form-control">
                         </div>
                       </div>
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
                         <!-- CVV -->
                         <div class="form-group card-data">
                           <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>CVV:</label><a class="glyphicon glyphicon-info-sign info" href="http://help.convio.net/site/PageServer?s_site=kd&pagename=user_donation_cvv" target="_blank"></a>

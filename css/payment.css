@@ -313,6 +313,21 @@ label.radio-inline{
   font-weight: 100;
   text-align: left;
 }
+
+#komen-donate{
+  max-width: 410px;
+  text-align: center;
+}
+
+#komen-form{
+  max-width: 700px
+}
+
+#komen-donate, #komen-form{
+  vertical-align: top;
+  display: inline-block;
+  width: 98%;
+}
 /* MEDIA QUERIES */
 
 @media (max-width:767px) {
@@ -338,6 +353,17 @@ label.radio-inline{
   }
 }
 
+@media (max-width:1199px) {
+  #komen-donate{
+    max-width: none;
+  }
+  #komen-donate, #komen-form{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
 @media (min-width: 991px) {
 
 
@@ -346,6 +372,9 @@ label.radio-inline{
 @media (min-width: 1199px) {
 
 	/* CREDIT CARD DATA */
+  .container{
+    margin-left: 2%!important;
+  }
 
   #cardnumber, #cvv {
   	width: 90%;

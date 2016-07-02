@@ -1,5 +1,36 @@
 $(function () {
-  $('[data-toggle="popover"]').popover({html:true,placement:"bottom"}); // enable popovers
+  $.fn.extend({
+    popoverClosable: function (options) {
+        var defaults = {
+            html:true,
+            template:
+                '<div class="popover">\
+<div class="arrow"></div>\
+<div class="popover-header" style="overflow: hidden">\
+<button type="button" style="margin-right:.5em ;font-size:2em"class="close" data-dismiss="popover" aria-hidden="true">&times;</button>\
+<h3 class="popover-title"></h3>\
+</div>\
+<div class="popover-content" style="padding-top:0"></div>\
+</div>'
+        };
+        options = $.extend({}, defaults, options);
+        var $popover_togglers = this;
+        $popover_togglers.popover(options);
+        $popover_togglers.on('click', function (e) {
+            e.preventDefault();
+            $popover_togglers.not(this).popover('hide');
+        });
+        $('html').on('click', '[data-dismiss="popover"]', function (e) {
+            $popover_togglers.popover('hide');
+        });
+    }
+});
+
+$(function () {
+    $('[data-toggle="popover"]').popoverClosable();
+});
+  // $('[data-toggle="popover"]').popover({html:true,placement:"bottom"}); // enable popovers
+
   $("#no-thanks").click(function(){
       $('#send-ecard').hide();
       $('#mail-card').hide();
