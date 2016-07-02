@@ -1,3 +1,70 @@
+$(function () {
+  $('[data-toggle="popover"]').popover({html:true,placement:"bottom"}); // enable popovers
+  $("#no-thanks").click(function(){
+      $('#send-ecard').hide();
+      $('#mail-card').hide();
+  });
+
+  $("#yes-mail-card").click(function(){
+      $('#send-ecard').hide();
+      $('#mail-card').show();
+  });
+
+  $("#yes-send-ecard").click(function(){
+      $('#send-ecard').show();
+      $('#mail-card').hide();
+  });
+
+  $("#card-destination-2").click(function(){
+      $('#tribute-card-me').show();
+  });
+  $("#card-destination-1").click(function(){
+      $('#tribute-card-me').hide();
+  });
+
+  $("#monthly_donation").click(function(){
+    if( $('#monthly_donation').is(':checked') ) {
+      $('p.amttimes').text("MONTHLY DONATION");
+    } else{
+      $('p.amttimes').text("ONE-TIME DONATION");
+    }
+  });
+
+  $("#tribute_show_honor").click(function(){
+    if( $('#tribute_show_honor').is(':checked') ) {
+      $('#tribute_honoree_name_row').show();
+    } else {
+      $('#tribute_honoree_name_row').hide();
+    }
+  });
+
+  $(".btn-value").click(function(){
+    if(this.value){
+      $('#cont-don-amount').hide();
+    } else {
+      $('#cont-don-amount').show();
+    }
+    $("#donation_amount").val(this.value);
+    $("button.btn-value").removeClass("btn-value-selected");
+    $(this).addClass("btn-value-selected");
+    changeText();
+  });
+
+  $("#donation_amount").bind('input change',changeText);
+
+  function changeText(){
+    var val = $("#donation_amount").val();
+    if (val === "")
+      val = "0.00";
+
+    var str= "$ " + val;
+
+    $('p.amtmonies').text(str);
+  }
+
+
+});
+
 $(document).ready(function() {
   $('#payment-form').bootstrapValidator({
     message: 'This value is not valid',
@@ -203,7 +270,7 @@ $(document).ready(function() {
   for (var i = 0; i < 12; i++) {
       select.append($("<option value='"+(i + year)+"' "+(i === 0 ? "selected" : "")+">"+(i + year)+"</option>"))
   }
-  
+
   $("a[data-option='US']").trigger("click");
   $("#billing-details > fieldset > div:nth-child(1) > div > div > div > a > span.bfh-selectbox-option").append('<span style="color:red; float:right;">CHANGE COUNTRY</span>');
 });
@@ -220,7 +287,7 @@ function stripeResponseHandler(status, response) {
       document.getElementById('a_x200').style.display = 'block';
       // show the errors on the form
       $(".payment-errors").html(response.error.message);
-    } 
+    }
     else {
       var form$ = $("#payment-form");
       // token contains id, last4, and card type

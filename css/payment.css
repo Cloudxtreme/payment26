@@ -216,7 +216,7 @@ img + .komen-p{
   color: #ffffff;
 }
 
-#cont-don-amount, #tribute_honoree_name_row, #send-ecard ,#mail-card{
+#cont-don-amount, #tribute_honoree_name_row, #send-ecard ,#mail-card, #tribute-card-me {
   display: none;
 }
 #tribute_honoree_name_row{
@@ -238,7 +238,9 @@ label.checkbox{
 #mail-card{
   margin-top:24px;
 }
-#mail-card label.radio{
+
+#mail-card>label.radio{
+  cursor: pointer;
   width: 100%;
 }
 #mail-card>div:first-of-type{
@@ -296,9 +298,30 @@ textarea{
 label.radio-inline{
   width: 30%;
 }
+#tribute-card-me{
+  margin-top: 14px;
+  padding-top: 14px;
+}
+#tribute-card-me>div{
+  box-sizing: border-box;
+  width: 46%;
+  margin: 0 1% 24px 1%;
+  display: inline-block;
+}
+
+#tribute-card-me label.control-label{
+  font-weight: 100;
+  text-align: left;
+}
 /* MEDIA QUERIES */
 
 @media (max-width:767px) {
+
+  #tribute-card-me>div{
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
   label.radio-inline{
     width: 100%;
   }

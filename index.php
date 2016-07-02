@@ -65,67 +65,7 @@
               <p>This payment form requires your browser to have JavaScript enabled. Please activate JavaScript and reload this page. Check <a href="http://enable-javascript.com" target="_blank">enable-javascript.com</a> for more informations.</p>
             </div>
           </noscript>
-          <script>
-          $(function () {
-            $('[data-toggle="popover"]').popover({html:true,placement:"bottom"}); // enable popovers
-            $("#no-thanks").click(function(){
-                $('#send-ecard').hide();
-                $('#mail-card').hide();
-            });
 
-            $("#yes-mail-card").click(function(){
-                $('#send-ecard').hide();
-                $('#mail-card').show();
-            });
-
-            $("#yes-send-ecard").click(function(){
-                $('#send-ecard').show();
-                $('#mail-card').hide();
-            });
-
-            $("#monthly_donation").click(function(){
-              if( $('#monthly_donation').is(':checked') ) {
-                $('p.amttimes').text("MONTHLY DONATION");
-              } else{
-                $('p.amttimes').text("ONE-TIME DONATION");
-              }
-            });
-
-            $("#tribute_show_honor").click(function(){
-              if( $('#tribute_show_honor').is(':checked') ) {
-                $('#tribute_honoree_name_row').show();
-              } else {
-                $('#tribute_honoree_name_row').hide();
-              }
-            });
-
-            $(".btn-value").click(function(){
-              if(this.value){
-                $('#cont-don-amount').hide();
-              } else {
-                $('#cont-don-amount').show();
-              }
-              $("#donation_amount").val(this.value);
-              $("button.btn-value").removeClass("btn-value-selected");
-              $(this).addClass("btn-value-selected");
-              changeText();
-            });
-
-            $("#donation_amount").bind('input change',changeText);
-
-            function changeText(){
-              var val = $("#donation_amount").val();
-              if (val === "")
-                val = "0.00";
-
-              var str= "$ " + val;
-
-              $('p.amtmonies').text(str);
-            }
-
-
-          })
-          </script>
           <div class="alert alert-danger" id="a_x200" style="display: none;"> <strong>Error!</strong> <span class="payment-errors"></span> </div>
           <pre>
             <?php
@@ -285,8 +225,36 @@
                               <label for=""><span class="glyphicon glyphicon-asterisk required"></span>eCard Message:</label>
                               <input data-bv-field="" class="form-control" name="e_card_message" id="e_card_message" value="" maxlength="50" placeholder="eCard Message" type="text">
                             </div>
-                            <label class="radio" ><input  type="radio" name="tribute_card_destination" id="send_to_me" value="send_to_me">I would like the Tribute Card sent to me.</label>
-                            <label class="radio" ><input  type="radio" name="tribute_card_destination" id="send_for_me" value="send_for_me">I would like Komen to send a Tribute Card for me.</label>
+                            <label class="radio" ><input id="card-destination-1" type="radio" name="tribute_card_destination" id="">I would like the Tribute Card sent to me.</label>
+                            <label class="radio" ><input id="card-destination-2" type="radio" name="tribute_card_destination" id="">I would like Komen to send a Tribute Card for me.</label>
+                            <div id="tribute-card-me">
+                              <p>Supply the name and address of the person to whom you would like the tribute card sent.</p>
+                              <h5>Tribute Card Recipient Address</h5>
+                              <div>
+                                <label class="control-label" for="">Tribute Recipient Name:</label>
+                                <input class="form-control" type="text" name="" id="" placeholder="Name">
+                              </div>
+                              <div>
+                                <label class="control-label" for="">Tribute Recipient Street 1:</label>
+                                <input class="form-control" type="text" name="" id="" placeholder="Street">
+                              </div>
+                              <div>
+                                <label class="control-label" for="">Tribute Recipient City:</label>
+                                <input class="form-control" type="text" name="" id="" placeholder="City">
+                              </div>
+                              <div>
+                                <label class="control-label" for="">Tribute Recipient State/Province:</label>
+                                <input class="form-control" type="text" name="" id="" maxlength="65" placeholder="State/Province">
+                              </div>
+                              <div>
+                                <label class="control-label" for="">Tribute Recipient ZIP/Postal Code:</label>
+                                <input class="form-control" type="text" name="" id="" maxlength="6" placeholder="ZIP/Postal Code">
+                              </div>
+                              <div>
+                                <label class="control-label" for="">Tribute Recipient Country:</label>
+                                <input class="form-control" type="text" name="" id="">
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
