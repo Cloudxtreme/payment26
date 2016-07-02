@@ -100,13 +100,14 @@
                     </div>
 
                     <div id="cont-don-amount"class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                      <input class="form-control" type="text" name="donation_amount" id="donation_amount" placeholder="$0.00">
+                      <input class="form-control" type="text" name="donation_amount" id="donation_amount" placeholder="$0.00 (Enter your donation amount)">
                     </div>
                   </div>
                   <div class="checkbox">
                     <input type="checkbox" name="monthly_donation" id="monthly_donation">
                     <label for="monthly_donation"> Make this my monthly donation.</label>
                     <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="If selected, you will be enrolled in our monthly program. Your monthly gift will be processed automatically with the credit card information you have provided.<br><a href='http://ww5.komen.org/HelpFAQ/HelpFAQs.html' target='_blank'>Learn More</a>"></span>
+                    <p>We will automatically receive your gift each month.</p>
                   </div>
                   <div class="checkbox">
                     <input type="checkbox" name="tribute_show_honor" id="tribute_show_honor">
@@ -129,7 +130,7 @@
                         <div class="">
                           <label  class="radio-inline"><input id="no-thanks" type="radio" name="tribute" value="no">No Thanks</label>
                           <label class="radio-inline"><input id="yes-mail-card" type="radio" name="tribute" value="mail">Yes, Mail Card</label>
-                          <label class="radio-inline"><input id="yes-send-ecard" type="radio" name="tribute" value="ecard">Yes, eCard</label>
+                          <label class="radio-inline"><input id="yes-send-ecard" type="radio" name="tribute" value="ecard">Yes, Send eCard</label>
                           <div id="send-ecard">
                             <div>
                               <label for="" class="send-ecard"> Send eCard on:</label>
@@ -211,8 +212,8 @@
                               <input data-bv-field="" class="form-control" name="ecard_subject" id="ecard_subject" value="" maxlength="50" placeholder="eCard Subject" type="text">
                             </div>
                             <div class="">
-                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span>Recipient email addresses:</label>
-                              <textarea class="form-control" id="ecard_recipient_email_addresses" name="ecard_recipient_email_addresses" rows="6"></textarea>
+                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span> eCard Message::</label>
+                              <textarea class="form-control" id="ecard_message" name="ecard_message" rows="6"></textarea>
                             </div>
                             <button class="step-button action-button finish-step" type="submit" name="nullbtn" id="nullbtn" value="eCard Preview" title="Reloads page. ">
                             eCard Preview
@@ -271,6 +272,10 @@
                   <h2>Special Monthly Gift Offer</h2>
                   <img class="col-xs-2 col-sm-2 col-md-2 col-lg-2" src="img/notepad.jpg" alt="Special Monthly Gift Offer">
                   <p class="komen-p">Click on the checkbox above to enroll in our monthly giving program and give $25 or more a month to receive a free journal and pen after your third monthly gift. <sup>1</sup></p>
+                  <input type="checkbox" name="premium_gift_optout" id="premium_gift_optout">
+                    <label for="subscribe">
+                      I do not want to receive the journal and pen
+                    </label>
                 </div>
               </div>
               <div class="row">
@@ -323,7 +328,7 @@
                       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
                         <!-- CVV -->
                         <div class="form-group card-data">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>CVV:</label>
+                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>CVV:</label><a class="glyphicon glyphicon-info-sign info" href="http://help.convio.net/site/PageServer?s_site=kd&pagename=user_donation_cvv" target="_blank"></a>
                             <input type="text" id="cvv" placeholder="CVV" maxlength="4" class="card-cvc form-control">
                         </div>
                       </div>
@@ -394,7 +399,7 @@
                   <fieldset>
                     <div class="row">
                       <!-- Form Name -->
-                      <h2>Billing Details</h2>
+                      <h2>Billing Information</h2>
                       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <!-- Country -->
                         <div class="form-group">
