@@ -318,7 +318,6 @@ $(document).ready(function() {
       ecard.text=$("input:radio[name=tribute_text]:checked").val();
       ecard.send_to=$('#ecard_recipient_email_addresses').val();
       
-      ecard.text=ecard.text.replace("_"," ");      
       if(ecard.from==" ") { ecard.from="Your name" }
       if (ecard.image=="ecard1") { 
         ecard.image=null; 
@@ -326,7 +325,7 @@ $(document).ready(function() {
       }
       else
       {
-        $("div#ecard_preview_content img#card").attr('src', 'img/'+ecard.image);
+        $("div#ecard_preview_content img#card").attr('src', 'img/'+ecard.image+'.png');
       }
       
       $("div#ecard_preview_content .ecard_data").each(function(){

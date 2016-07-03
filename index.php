@@ -161,8 +161,8 @@
                     <div id="cont-tribute">
                       <div class="">
                         <span class="glyphicon glyphicon-asterisk required"></span>
-                        <label class="radio"><input type="radio" name="tribute_text" value="in_memory_of">In Memory of </label>
-                        <label class="radio"><input type="radio" name="tribute_text" value="in_honor_of">In Honor of </label>
+                        <label class="radio"><input type="radio" name="tribute_text" value="in memory of">In Memory of </label>
+                        <label class="radio"><input type="radio" name="tribute_text" value="in honor of">In Honor of </label>
                       </div>
                       <div class="">
                         <label for="tribute">Do you want to send a Tribute Card?</label>
