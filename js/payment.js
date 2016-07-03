@@ -1,3 +1,4 @@
+var ecard = { sent_to:"Recipient emails", from:"Your name", to:"Your Friends", text:"in honor/in memory", subject:"No subject", honoree:"Honoree name", message:"Your message", image:null};
 $(function () {
   $.fn.extend({
     popoverClosable: function (options) {
@@ -97,6 +98,7 @@ $(function () {
 });
 
 $(document).ready(function() {
+  
   $('#payment-form').bootstrapValidator({
     message: 'This value is not valid',
     feedbackIcons: {
@@ -304,6 +306,35 @@ $(document).ready(function() {
 
   $("a[data-option='US']").trigger("click");
   $("#billing-details > fieldset > div:nth-child(1) > div > div > div > a > span.bfh-selectbox-option").append('<span style="color:red; float:right;">CHANGE COUNTRY</span>');
+
+  $("button#ecard_preview").click(
+    function(){
+      ecard.from=$('.card-holder-name').val()+' '+$('.card-holder-surname').val();
+      ecard.to=$('#tribute_honoree_name').val();
+      ecard.subject=$('#ecard_subject').val();
+      ecard.honoree=$('#tribute_honoree_name').val();
+      ecard.message=$('#ecard_message').val();
+      ecard.image=$("input:radio[name=selected_ecard]:checked").val();
+      ecard.text=$("input:radio[name=tribute_text]:checked").val();
+      ecard.send_to=$('#ecard_recipient_email_addresses').val();
+      
+      ecard.text=ecard.text.replace("_"," ");      
+      if(ecard.from==" ") { ecard.from="Your name" }
+      if (ecard.image=="ecard1") { 
+        ecard.image=null; 
+        $("div#ecard_preview_content img#card").remove();
+      }
+      else
+      {
+        $("div#ecard_preview_content img#card").attr('src', 'img/'+ecard.image);
+      }
+      
+      $("div#ecard_preview_content .ecard_data").each(function(){
+        $(this).html(ecard[$(this).attr('value')]);
+      });
+
+    }
+  );
 });
 
 // this identifies your website in the createToken call below

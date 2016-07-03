@@ -59,6 +59,20 @@ h2 {
   right: 23px!important;
 }*/
 
+/* ECARD PREVIEW */
+
+div#ecard_preview_content p img {
+  margin-bottom: 10px;
+}
+
+button#ecard_preview {
+  margin-top: 10px;
+}
+
+div#ecard_preview_content p {
+  text-align: center;
+}
+
 /* PAY AMOUNT */
 
 .payamount {
@@ -392,8 +406,6 @@ label.radio-inline{
 	  top: 28px!important;
 	  right: 23px!important;
 	}
-
-
 
 	/* YOUR INFORMATION */
 

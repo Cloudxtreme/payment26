@@ -86,379 +86,416 @@
               <p class="h6"><span class="glyphicon glyphicon-asterisk required"></span>required</p>
             </div>
               <!-- First 3 Rows -->
-              <div class="row ">
-                <div class="komen-callout komen-section komen-no-top col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <h2><span class="glyphicon glyphicon-asterisk required"></span>Donation Amount</h2>
+            <div class="row ">
+              <div class="komen-callout komen-section komen-no-top col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Modal -->
+                <div class="modal fade" id="ecard_preview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Ecard Preview</h4>
+                      </div>
+                      <div id="ecard_preview_content" class="modal-body">
+                        From: <span class="ecard_data" value="from"></span><br/>
+                        To: <span class="ecard_data" value="send_to"></span><br/>
+                        Subject: <span class="ecard_data" value="subject"></span><br/>
+                        <hr/>
+                        <img id="logo" src="img/logo.png">
+                        <p>
+                          <br/>
+                          <img id="card" src="">
+                          A gift <span class="ecard_data" value="text"></span><br/>
+                          <span style="font-size: 20px" class="ecard_data" value="honoree"></span><br/>
+                          has been made to<br/>
+                          <span style="font-size: 30px; line-height: 1.2em;">Susan G. Komen<sup style="line-height: 0.6em; font-size: 0.8em;">®</sup></span><br/>
+                          by<br/>
+                          <span class="ecard_data" value="from"></span><br/>
+                          <span style="font-size: 12px;line-height: 1.2em;  color: #ce006b;">
+                            Susan G. Komen promises to save lives and end breast cancer by empowering people, ensuring quality care for all and energizing science to find the cures.
+                          </span><br/>
+                          The Running Ribbon is a registered trademark of Susan G. Komen
+                          <hr/>
+                          <span class="ecard_data" value="message"></span><br/>
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h2><span class="glyphicon glyphicon-asterisk required"></span>Donation Amount</h2>
+                <div class="row">
                   <div class="row">
-                    <div class="row">
-                      <button class="btn-value  "type="button" value="25">$25</button>
-                      <button class="btn-value  "type="button" value="50">$50</button>
-                      <button class="btn-value  "type="button" value="100">$100</button>
-                      <button class="btn-value  "type="button" value="250">$250</button>
-                      <button class="btn-value   "type="button" value="500">$500</button>
-                      <button class="btn-value  "type="button" value="">OTHER</button>
-                    </div>
-
-                    <div id="cont-don-amount"class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                      <input class="form-control" type="text" name="donation_amount" id="donation_amount" placeholder="$0.00 (Enter your donation amount)">
-                    </div>
-                  </div>
-                  <div class="checkbox">
-                    <input type="checkbox" name="monthly_donation" id="monthly_donation">
-                    <label for="monthly_donation"> Make this my monthly donation.</label>
-                    <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="If selected, you will be enrolled in our monthly program. Your monthly gift will be processed automatically with the credit card information you have provided.<br><a href='http://ww5.komen.org/HelpFAQ/HelpFAQs.html' target='_blank'>Learn More</a>"></span>
-                    <p>We will automatically receive your gift each month.</p>
-                  </div>
-                  <div class="checkbox">
-                    <input type="checkbox" name="tribute_show_honor_or_memory" id="tribute_show_honor_or_memory">
-                    <label for="tribute_show_honor_or_memory">Make my gift in honor or memory of a friend or loved one.</label>
-                    <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="<strong>Honorariums</strong> are a great way to show your appreciation for a special someone by making a donation to Susan G. Komen® in their name. Honor gifts are perfect for anniversaries, birthdays and other special events.<br>
-                    <strong>A Memorial gift</strong> is a beautiful tribute to the life of a loved one who has passed on. "></span>
+                    <button class="btn-value  "type="button" value="25">$25</button>
+                    <button class="btn-value  "type="button" value="50">$50</button>
+                    <button class="btn-value  "type="button" value="100">$100</button>
+                    <button class="btn-value  "type="button" value="250">$250</button>
+                    <button class="btn-value   "type="button" value="500">$500</button>
+                    <button class="btn-value  "type="button" value="">OTHER</button>
                   </div>
 
-                  <div id="tribute_honoree_name_row">
-                    <div class="form-content col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                      <span class="glyphicon glyphicon-asterisk required"></span>
-                      <label for="tribute_honoree_name">Person's Name or Occasion</label>
-                      <input class="form-control" name="tribute_honoree_name" id="tribute_honoree_name" value="" maxlength="50" type="text" placeholder="Person's Name or Occasion">
-                      <div id="cont-tribute">
-                        <div class="">
-                          <span class="glyphicon glyphicon-asterisk required"></span>
-                          <label class="radio"><input type="radio" name="tribute_text" value="in_memory_of">In Memory of </label>
-                          <label class="radio"><input type="radio" name="tribute_text" value="in_honor_of">In Honor of </label>
-                        </div>
-                        <div class="">
-                          <label for="tribute">Do you want to send a Tribute Card?</label>
-                          <label  class="radio-inline"><input id="no-thanks" type="radio" name="send_tribute_card" value="no">No Thanks</label>
-                          <label class="radio-inline"><input id="yes-send-ecard" type="radio" name="send_tribute_card" value="ecard">Yes, Send eCard</label>
-                          <label class="radio-inline"><input id="yes-mail-card" type="radio" name="send_tribute_card" value="mail">Yes, Mail Card</label>
-                          <div id="send-ecard">
-                            <div>
-                              <label for="" class="send-ecard"> Send eCard on:</label>
-                              <select class="form-control komen-date" name="ecard_send_date_MONTH" id="ecard_send_date_MONTH" title="Month">
-                                <option value="1">Jan</option>
-                                <option value="2">Feb</option>
-                                <option value="3">Mar</option>
-                                <option value="4">Apr</option>
-                                <option value="5">May</option>
-                                <option value="6" selected="selected">Jun</option>
-                                <option value="7">Jul</option>
-                                <option value="8">Aug</option>
-                                <option value="9">Sep</option>
-                                <option value="10">Oct</option>
-                                <option value="11">Nov</option>
-                                <option value="12">Dec</option>
-                              </select>
-                              <select class="form-control komen-date" name="ecard_send_date_DAY" id="ecard_send_date_DAY" title="Day">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                                <option value="21">21</option>
-                                <option value="22">22</option>
-                                <option value="23">23</option>
-                                <option value="24">24</option>
-                                <option value="25">25</option>
-                                <option value="26">26</option>
-                                <option value="27">27</option>
-                                <option value="28">28</option>
-                                <option value="29">29</option>
-                                <option value="30" selected="selected">30</option>
-                                <option value="31">31</option>
-                              </select>
-                              <select class="form-control komen-date" name="ecard_send_date_YEAR" id="ecard_send_date_YEAR" title="Year">
-                                <option value="2026">2026</option>
-                                <option value="2025">2025</option>
-                                <option value="2024">2024</option>
-                                <option value="2023">2023</option>
-                                <option value="2022">2022</option>
-                                <option value="2021">2021</option>
-                                <option value="2020">2020</option>
-                                <option value="2019">2019</option>
-                                <option value="2018">2018</option>
-                                <option value="2017">2017</option>
-                                <option value="2016" selected="selected">2016</option>
-                              </select>
-                            </div>
-                            <div class="">
-                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span>Recipient email addresses:</label>
-                              <textarea class="form-control" name="ecard_recipient_email_addresses" id="ecard_recipient_email_addresses" rows="6"></textarea>
-                            </div>
-                            <div class="">
-                              <label for="ecard1" class="komen-ecard-image"><img src="img/ecard1.png" alt=""><input type="radio" name="selected_ecard" id="ecard1" value="ecard1"></label>
-                              <label for="ecard2" class="komen-ecard-image"><img src="img/ecard2.png" alt=""><input type="radio" name="selected_ecard" id="ecard2" value="ecard2"></label>
-                              <label for="ecard3" class="komen-ecard-image"><img src="img/ecard3.png" alt=""><input type="radio" name="selected_ecard" id="ecard3" value="ecard3"></label>
-                              <label for="ecard4" class="komen-ecard-image"><img src="img/ecard4.png" alt=""><input type="radio" name="selected_ecard" id="ecard4" value="ecard4"></label>
-                              <label for="ecard5" class="komen-ecard-image"><img src="img/ecard5.png" alt=""><input type="radio" name="selected_ecard" id="ecard5" value="ecard5"></label>
-                              <label for="ecard6" class="komen-ecard-image"><img src="img/ecard6.png" alt=""><input type="radio" name="selected_ecard" id="ecard6" value="ecard6"></label>
-                            </div>
-                            <div class="">
-                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span>eCard Subject:</label>
-                              <input data-bv-field="" class="form-control" name="ecard_subject" id="ecard_subject" value="" maxlength="50" placeholder="eCard Subject" type="text">
-                            </div>
-                            <div class="">
-                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span> eCard Message:</label>
-                              <textarea class="form-control" id="ecard_message" name="ecard_message" rows="6"></textarea>
-                            </div>
-                            <button class="step-button action-button finish-step" type="submit" name="nullbtn" id="nullbtn" value="eCard Preview" title="Reloads page. ">
-                            eCard Preview
-                            </button>
-                            <label class="checkbox"><input name="e_card_copy_sendername" id="e_card_copy_sendername" type="checkbox">Yes, send me a copy of the eCard.</label>
-                          </div>
-                          <div id="mail-card">
-                            <p class="komen-p">Type your name exactly as you would like it to appear in the signature of the tribute card.</p>
-                            <div>
-                              <label for=""><span class="glyphicon glyphicon-asterisk required"></span>Tribute Card Signature (50 characters or less) </label>
-                              <input data-bv-field="" class="form-control" name="mail_tribute_card_signature" id="mail_tribute_card_signature" value="" maxlength="50" placeholder="Tribute Card Signature" type="text">
-                            </div>
-                            <label class="radio" ><input id="card-destination-1" type="radio" name="mail_tribute_card_destination" id="mail_tribute_card_destination" value="card-destination-1">I would like the Tribute Card sent to me.</label>
-                            <label class="radio" ><input id="card-destination-2" type="radio" name="mail_tribute_card_destination" id="mail_tribute_card_destination" value="card-destination-2">I would like Komen to send a Tribute Card for me.</label>
-                            <div id="tribute-card-me">
-                              <p>Supply the name and address of the person to whom you would like the tribute card sent.</p>
-                              <h5>Tribute Card Recipient Address</h5>
-                              <div>
-                                <label class="control-label" for="">Tribute Recipient Name:</label>
-                                <input class="form-control" type="text" name="mail_tribute_card_recipient_name" id="mail_tribute_card_recipient_name" placeholder="Name">
-                              </div>
-                              <div>
-                                <label class="control-label" for="">Tribute Recipient Street 1:</label>
-                                <input class="form-control" type="text" name="mail_tribute_card_recipient_street" id="mail_tribute_card_recipient_street" placeholder="Street">
-                              </div>
-                              <div>
-                                <label class="control-label" for="">Tribute Recipient City:</label>
-                                <input class="form-control" type="text" name="mail_tribute_card_recipient_city" id="mail_tribute_card_recipient_city" placeholder="City">
-                              </div>
-                              <div>
-                                <label class="control-label" for="">Tribute Recipient State/Province:</label>
-                                <input class="form-control" type="text" name="mail_tribute_card_recipient_state" id="mail_tribute_card_recipient_state" maxlength="65" placeholder="State/Province">
-                              </div>
-                              <div>
-                                <label class="control-label" for="">Tribute Recipient ZIP/Postal Code:</label>
-                                <input class="form-control" type="text" name="mail_tribute_card_recipient_zip" id="mail_tribute_card_recipient_zip" maxlength="6" placeholder="ZIP/Postal Code">
-                              </div>
-                              <div>
-                                <label class="control-label" for="">Tribute Recipient Country:</label>
-                                <input class="form-control" type="text" name="mail_tribute_card_recipient_country" id="mail_tribute_card_recipient_country">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    </div>
-
-                  <!-- Form Name -->
-                </div>
-              </div>
-              <div class="row">
-                <div class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <!-- Form Name -->
-                  <h2>Special Monthly Gift Offer</h2>
-                  <img class="col-xs-2 col-sm-2 col-md-2 col-lg-2" src="img/notepad.jpg" alt="Special Monthly Gift Offer">
-                  <p class="komen-p">Click on the checkbox above to enroll in our monthly giving program and give $25 or more a month to receive a free journal and pen after your third monthly gift. <sup>1</sup></p>
-                  <input type="checkbox" name="premium_gift_optout" id="premium_gift_optout">
-                    <label for="premium_gift_optout">
-                      I do not want to receive the journal and pen
-                    </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <!-- Form Name -->
-                  <h2><span class="glyphicon glyphicon-asterisk required"></span>Where would you like your donation to be applied?</h2>
-                  <div class="radio">
-                    <input type="radio" name="fund_destination" value="stage4" id="donation-stage4">
-                    <label for="donation-stage4">Stage IV/ Metastatic Breast Cancer Research. <sup>2</sup> </label>
-                    <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content=" <strong>Stage IV/ Metastatic Breast Cancer Research</strong>
-                    Your gift will help us support research that focuses on Stage IV/ Metastatic Breast Cancer Research—cancer that has spread beyond the breast to other organs which is responsible for nearly all breast cancer deaths (including 40,000 in the U.S. this year alone)."></span>
-
-                  </div>
-                  <div class="radio">
-                    <input type="radio" name="fund_destination" value="general-bc" id="donation-general-bc">
-                    <label for="donation-general-bc">General Breast Cancer Research. <sup>2</sup> </label>
-                    <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content=" <strong>General Breast Cancer Research</strong>
-                    Your gift will help us support the best breast cancer research, investigating everything from prevention through treatment and beyond."></span>
-                  </div>
-                  <div class="radio">
-                    <input type="radio" name="fund_destination" value="triple-nbc" id="donation-triple-nbc">
-                    <label for="donation-triple-nbc">Triple Negative Breast Cancer Research. <sup>2</sup> </label>
-                    <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="<strong>Triple Negative Breast Cancer Research</strong>
-                    Your gift will help us support research focusing on triple negative breast cancer a highly aggressive form of breast cancer for which no targeted treatment currently exists."></span>
-                  </div>
-                  <div class="radio">
-                    <input type="radio" name="fund_destination" value="general-fund" id="donation-general-fund">
-                    <label for="donation-general-fund">General Fund. <sup>2</sup> </label>
-                    <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="<strong> General Fund</strong>
-                    Your gift will help us support research, education and support while providing information and other programs to assist women, men and families facing breast cancer, and general administrative costs."></span>
-
+                  <div id="cont-don-amount"class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <input class="form-control" type="text" name="donation_amount" id="donation_amount" placeholder="$0.00 (Enter your donation amount)">
                   </div>
                 </div>
-              </div>
-              <!-- Second 3 rows -->
-              <div class="row">
-                <div id="payment-information" class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <fieldset>
-                    <h2>Payment Information</h2>
-                    <p  class="komen-p" id="payment-information">All transactions conducted on this website are encrypted using a secure server to protect your privacy. View Privacy Policy.</p>
-                    <div class="payamount"><p class="amtmonies">$0.00</p><p class="amttimes">ONE-TIME DONATION</p></div>
-                    <div class="row">
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-                        <!-- Card Number -->
-                        <div class="form-group card-data">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Credit Card Number:</label>
-                          <input type="text" id="cardnumber" maxlength="19" placeholder="Card Number" class="card-number form-control">
-                        </div>
+                <div class="checkbox">
+                  <input type="checkbox" name="monthly_donation" id="monthly_donation">
+                  <label for="monthly_donation"> Make this my monthly donation.</label>
+                  <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="If selected, you will be enrolled in our monthly program. Your monthly gift will be processed automatically with the credit card information you have provided.<br><a href='http://ww5.komen.org/HelpFAQ/HelpFAQs.html' target='_blank'>Learn More</a>"></span>
+                  <p>We will automatically receive your gift each month.</p>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" name="tribute_show_honor_or_memory" id="tribute_show_honor_or_memory">
+                  <label for="tribute_show_honor_or_memory">Make my gift in honor or memory of a friend or loved one.</label>
+                  <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="<strong>Honorariums</strong> are a great way to show your appreciation for a special someone by making a donation to Susan G. Komen® in their name. Honor gifts are perfect for anniversaries, birthdays and other special events.<br>
+                  <strong>A Memorial gift</strong> is a beautiful tribute to the life of a loved one who has passed on. "></span>
+                </div>
+
+                <div id="tribute_honoree_name_row">
+                  <div class="form-content col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <span class="glyphicon glyphicon-asterisk required"></span>
+                    <label for="tribute_honoree_name">Person's Name or Occasion</label>
+                    <input class="form-control" name="tribute_honoree_name" id="tribute_honoree_name" value="" maxlength="50" type="text" placeholder="Person's Name or Occasion">
+                    <div id="cont-tribute">
+                      <div class="">
+                        <span class="glyphicon glyphicon-asterisk required"></span>
+                        <label class="radio"><input type="radio" name="tribute_text" value="in_memory_of">In Memory of </label>
+                        <label class="radio"><input type="radio" name="tribute_text" value="in_honor_of">In Honor of </label>
                       </div>
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
-                        <!-- CVV -->
-                        <div class="form-group card-data">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>CVV:</label><a class="glyphicon glyphicon-info-sign info" href="http://help.convio.net/site/PageServer?s_site=kd&pagename=user_donation_cvv" target="_blank"></a>
-                            <input type="text" id="cvv" placeholder="CVV" maxlength="4" class="card-cvc form-control">
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                        <!-- Expiry-->
-                        <div class="form-group card-data">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Expiration Date:</label>
-                          <div class="form-inline">
-                            <select data-stripe="exp-month" class="card-expiry-month stripe-sensitive required form-control">
-                              <option value="01" selected="selected">01</option>
-                              <option value="02">02</option>
-                              <option value="03">03</option>
-                              <option value="04">04</option>
-                              <option value="05">05</option>
-                              <option value="06">06</option>
-                              <option value="07">07</option>
-                              <option value="08">08</option>
-                              <option value="09">09</option>
+                      <div class="">
+                        <label for="tribute">Do you want to send a Tribute Card?</label>
+                        <label  class="radio-inline"><input id="no-thanks" type="radio" name="send_tribute_card" value="no">No Thanks</label>
+                        <label class="radio-inline"><input id="yes-send-ecard" type="radio" name="send_tribute_card" value="ecard">Yes, Send eCard</label>
+                        <label class="radio-inline"><input id="yes-mail-card" type="radio" name="send_tribute_card" value="mail">Yes, Mail Card</label>
+                        <div id="send-ecard">
+                          <div>
+                            <label for="" class="send-ecard"> Send eCard on:</label>
+                            <select class="form-control komen-date" name="ecard_send_date_MONTH" id="ecard_send_date_MONTH" title="Month">
+                              <option value="1">Jan</option>
+                              <option value="2">Feb</option>
+                              <option value="3">Mar</option>
+                              <option value="4">Apr</option>
+                              <option value="5">May</option>
+                              <option value="6" selected="selected">Jun</option>
+                              <option value="7">Jul</option>
+                              <option value="8">Aug</option>
+                              <option value="9">Sep</option>
+                              <option value="10">Oct</option>
+                              <option value="11">Nov</option>
+                              <option value="12">Dec</option>
+                            </select>
+                            <select class="form-control komen-date" name="ecard_send_date_DAY" id="ecard_send_date_DAY" title="Day">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
                               <option value="10">10</option>
                               <option value="11">11</option>
                               <option value="12">12</option>
+                              <option value="13">13</option>
+                              <option value="14">14</option>
+                              <option value="15">15</option>
+                              <option value="16">16</option>
+                              <option value="17">17</option>
+                              <option value="18">18</option>
+                              <option value="19">19</option>
+                              <option value="20">20</option>
+                              <option value="21">21</option>
+                              <option value="22">22</option>
+                              <option value="23">23</option>
+                              <option value="24">24</option>
+                              <option value="25">25</option>
+                              <option value="26">26</option>
+                              <option value="27">27</option>
+                              <option value="28">28</option>
+                              <option value="29">29</option>
+                              <option value="30" selected="selected">30</option>
+                              <option value="31">31</option>
                             </select>
-                            <span> / </span>
-                            <select data-stripe="exp-year" class="card-expiry-year stripe-sensitive required form-control">
+                            <select class="form-control komen-date" name="ecard_send_date_YEAR" id="ecard_send_date_YEAR" title="Year">
+                              <option value="2026">2026</option>
+                              <option value="2025">2025</option>
+                              <option value="2024">2024</option>
+                              <option value="2023">2023</option>
+                              <option value="2022">2022</option>
+                              <option value="2021">2021</option>
+                              <option value="2020">2020</option>
+                              <option value="2019">2019</option>
+                              <option value="2018">2018</option>
+                              <option value="2017">2017</option>
+                              <option value="2016" selected="selected">2016</option>
                             </select>
+                          </div>
+                          <div class="">
+                            <label for=""><span class="glyphicon glyphicon-asterisk required"></span>Recipient email addresses:</label>
+                            <textarea class="form-control" name="ecard_recipient_email_addresses" id="ecard_recipient_email_addresses" rows="6"></textarea>
+                          </div>
+                          <div class="">
+                            <label for="ecard1" class="komen-ecard-image"><img src="img/ecard1.png" alt=""><input type="radio" name="selected_ecard" id="ecard1" value="ecard1"></label>
+                            <label for="ecard2" class="komen-ecard-image"><img src="img/ecard2.png" alt=""><input type="radio" name="selected_ecard" id="ecard2" value="ecard2"></label>
+                            <label for="ecard3" class="komen-ecard-image"><img src="img/ecard3.png" alt=""><input type="radio" name="selected_ecard" id="ecard3" value="ecard3"></label>
+                            <label for="ecard4" class="komen-ecard-image"><img src="img/ecard4.png" alt=""><input type="radio" name="selected_ecard" id="ecard4" value="ecard4"></label>
+                            <label for="ecard5" class="komen-ecard-image"><img src="img/ecard5.png" alt=""><input type="radio" name="selected_ecard" id="ecard5" value="ecard5"></label>
+                            <label for="ecard6" class="komen-ecard-image"><img src="img/ecard6.png" alt=""><input type="radio" name="selected_ecard" id="ecard6" value="ecard6"></label>
+                          </div>
+                          <div class="">
+                            <label for=""><span class="glyphicon glyphicon-asterisk required"></span>eCard Subject:</label>
+                            <input data-bv-field="" class="form-control" name="ecard_subject" id="ecard_subject" value="" maxlength="50" placeholder="eCard Subject" type="text">
+                          </div>
+                          <div class="">
+                            <label for=""><span class="glyphicon glyphicon-asterisk required"></span> eCard Message:</label>
+                            <textarea class="form-control" id="ecard_message" name="ecard_message" rows="6"></textarea>
+                          </div>
+                          <button data-toggle="modal" data-target="#ecard_preview" class="step-button action-button finish-step" name="ecard_preview" id="ecard_preview" value="eCard Preview" title="Reloads page. ">
+                          eCard Preview
+                          </button>
+                          <label class="checkbox"><input name="e_card_copy_sendername" id="e_card_copy_sendername" type="checkbox">Yes, send me a copy of the eCard.</label>
+                        </div>
+                        <div id="mail-card">
+                          <p class="komen-p">Type your name exactly as you would like it to appear in the signature of the tribute card.</p>
+                          <div>
+                            <label for=""><span class="glyphicon glyphicon-asterisk required"></span>Tribute Card Signature (50 characters or less) </label>
+                            <input data-bv-field="" class="form-control" name="mail_tribute_card_signature" id="mail_tribute_card_signature" value="" maxlength="50" placeholder="Tribute Card Signature" type="text">
+                          </div>
+                          <label class="radio" ><input id="card-destination-1" type="radio" name="mail_tribute_card_destination" id="mail_tribute_card_destination" value="card-destination-1">I would like the Tribute Card sent to me.</label>
+                          <label class="radio" ><input id="card-destination-2" type="radio" name="mail_tribute_card_destination" id="mail_tribute_card_destination" value="card-destination-2">I would like Komen to send a Tribute Card for me.</label>
+                          <div id="tribute-card-me">
+                            <p>Supply the name and address of the person to whom you would like the tribute card sent.</p>
+                            <h5>Tribute Card Recipient Address</h5>
+                            <div>
+                              <label class="control-label" for="">Tribute Recipient Name:</label>
+                              <input class="form-control" type="text" name="mail_tribute_card_recipient_name" id="mail_tribute_card_recipient_name" placeholder="Name">
+                            </div>
+                            <div>
+                              <label class="control-label" for="">Tribute Recipient Street 1:</label>
+                              <input class="form-control" type="text" name="mail_tribute_card_recipient_street" id="mail_tribute_card_recipient_street" placeholder="Street">
+                            </div>
+                            <div>
+                              <label class="control-label" for="">Tribute Recipient City:</label>
+                              <input class="form-control" type="text" name="mail_tribute_card_recipient_city" id="mail_tribute_card_recipient_city" placeholder="City">
+                            </div>
+                            <div>
+                              <label class="control-label" for="">Tribute Recipient State/Province:</label>
+                              <input class="form-control" type="text" name="mail_tribute_card_recipient_state" id="mail_tribute_card_recipient_state" maxlength="65" placeholder="State/Province">
+                            </div>
+                            <div>
+                              <label class="control-label" for="">Tribute Recipient ZIP/Postal Code:</label>
+                              <input class="form-control" type="text" name="mail_tribute_card_recipient_zip" id="mail_tribute_card_recipient_zip" maxlength="6" placeholder="ZIP/Postal Code">
+                            </div>
+                            <div>
+                              <label class="control-label" for="">Tribute Recipient Country:</label>
+                              <input class="form-control" type="text" name="mail_tribute_card_recipient_country" id="mail_tribute_card_recipient_country">
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </fieldset>
-                </div>
-              </div>
-              <div class="row">
-                <div id="your-information" class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <fieldset>
-                    <div class="row">
-                      <!-- Form Name -->
-                      <h2>Your Information</h2>
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                        <!-- Card Holder Name -->
-                        <div class="form-group">
-                          <label class="control-label"  for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>First name</label>
-                          <input type="text" name="card_holder_name" maxlength="70" placeholder="Card Holder Name" class="card-holder-name form-control">
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label"  for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Last Name</label>
-                          <input type="text" name="card_holder_surname" maxlength="70" placeholder="Card Holder Surname" class="card-holder-surname form-control">
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                        <!-- Phone Number -->
-                        <div class="form-group">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Phone Number</label>
-                          <input type="text" id="phone" name="phone" maxlength="30" placeholder="Phone Number" class="form-control">
-                        </div>
-                        <!-- Email -->
-                        <div class="form-group">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Email Address</label>
-                          <input type="text" name="email" maxlength="65" placeholder="Email" class="email form-control">
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-              </div>
-              <div class="row">
-                <div  id="billing-details" class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <fieldset>
-                    <div class="row">
-                      <!-- Form Name -->
-                      <h2>Billing Information</h2>
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <!-- Country -->
-                        <div class="form-group">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Country</label>
-                          <!--input type="text" name="country" placeholder="Country" class="country form-control"-->
-                          <div class="country bfh-selectbox bfh-countries" name="country" placeholder="Select Country" data-flags="true" data-filter="true"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                        <!-- Postcal Code -->
-                        <div class="form-group">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Postal Code</label>
-                          <input type="text" name="zip" maxlength="9" placeholder="Postal Code" class="zip form-control">
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                        <!-- Street -->
-                        <div class="form-group">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Street Address, Apt. or Ste.#</label>
-                          <input type="text" name="street" placeholder="Street" class="address form-control">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                        <!-- City -->
-                        <div class="form-group">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>City</label>
-                            <input type="text" name="city" placeholder="City" class="city form-control">
-                        </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                        <!-- State -->
-                        <div class="form-group">
-                          <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>State</label>
-                          <input type="text" name="state" maxlength="65" placeholder="State" class="state form-control">
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-                </div>
-              </div>
-              <div class="row">
-                <div id="end-payment" class="komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <div>
-                    <input type="hidden" id="subscriber_country" name="subscriber_country">
-                    <input type="checkbox" name="subscribe" id="subscribe" checked="checked">
-                    <label for="subscribe">
-                      Yes, I would like to receive&nbsp;emails from Susan G. Komen®
-                    </label>
-                    <!-- Submit -->
-                    <button class="step-button action-button finish-step" type="submit">SEND MY DONATION</button>
-                    <div class="payamount"><p class="amtmonies">$0.00</p><p class="amttimes">ONE-TIME DONATION</p></div>
                   </div>
+
+                  </div>
+
+                <!-- Form Name -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Form Name -->
+                <h2>Special Monthly Gift Offer</h2>
+                <img class="col-xs-2 col-sm-2 col-md-2 col-lg-2" src="img/notepad.jpg" alt="Special Monthly Gift Offer">
+                <p class="komen-p">Click on the checkbox above to enroll in our monthly giving program and give $25 or more a month to receive a free journal and pen after your third monthly gift. <sup>1</sup></p>
+                <input type="checkbox" name="premium_gift_optout" id="premium_gift_optout">
+                  <label for="premium_gift_optout">
+                    I do not want to receive the journal and pen
+                  </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Form Name -->
+                <h2><span class="glyphicon glyphicon-asterisk required"></span>Where would you like your donation to be applied?</h2>
+                <div class="radio">
+                  <input type="radio" name="fund_destination" value="stage4" id="donation-stage4">
+                  <label for="donation-stage4">Stage IV/ Metastatic Breast Cancer Research. <sup>2</sup> </label>
+                  <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content=" <strong>Stage IV/ Metastatic Breast Cancer Research</strong>
+                  Your gift will help us support research that focuses on Stage IV/ Metastatic Breast Cancer Research—cancer that has spread beyond the breast to other organs which is responsible for nearly all breast cancer deaths (including 40,000 in the U.S. this year alone)."></span>
+
+                </div>
+                <div class="radio">
+                  <input type="radio" name="fund_destination" value="general-bc" id="donation-general-bc">
+                  <label for="donation-general-bc">General Breast Cancer Research. <sup>2</sup> </label>
+                  <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content=" <strong>General Breast Cancer Research</strong>
+                  Your gift will help us support the best breast cancer research, investigating everything from prevention through treatment and beyond."></span>
+                </div>
+                <div class="radio">
+                  <input type="radio" name="fund_destination" value="triple-nbc" id="donation-triple-nbc">
+                  <label for="donation-triple-nbc">Triple Negative Breast Cancer Research. <sup>2</sup> </label>
+                  <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="<strong>Triple Negative Breast Cancer Research</strong>
+                  Your gift will help us support research focusing on triple negative breast cancer a highly aggressive form of breast cancer for which no targeted treatment currently exists."></span>
+                </div>
+                <div class="radio">
+                  <input type="radio" name="fund_destination" value="general-fund" id="donation-general-fund">
+                  <label for="donation-general-fund">General Fund. <sup>2</sup> </label>
+                  <span data-trigger="click" tabindex="0" class="glyphicon glyphicon-info-sign info" role="button" data-toggle="popover" data-content="<strong> General Fund</strong>
+                  Your gift will help us support research, education and support while providing information and other programs to assist women, men and families facing breast cancer, and general administrative costs."></span>
+
                 </div>
               </div>
+            </div>
+            <!-- Second 3 rows -->
+            <div class="row">
+              <div id="payment-information" class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <fieldset>
+                  <h2>Payment Information</h2>
+                  <p  class="komen-p" id="payment-information">All transactions conducted on this website are encrypted using a secure server to protect your privacy. View Privacy Policy.</p>
+                  <div class="payamount"><p class="amtmonies">$0.00</p><p class="amttimes">ONE-TIME DONATION</p></div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                      <!-- Card Number -->
+                      <div class="form-group card-data">
+                        <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Credit Card Number:</label>
+                        <input type="text" id="cardnumber" maxlength="19" placeholder="Card Number" class="card-number form-control">
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
+                      <!-- CVV -->
+                      <div class="form-group card-data">
+                        <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>CVV:</label><a class="glyphicon glyphicon-info-sign info" href="http://help.convio.net/site/PageServer?s_site=kd&pagename=user_donation_cvv" target="_blank"></a>
+                          <input type="text" id="cvv" placeholder="CVV" maxlength="4" class="card-cvc form-control">
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                      <!-- Expiry-->
+                      <div class="form-group card-data">
+                        <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Expiration Date:</label>
+                        <div class="form-inline">
+                          <select data-stripe="exp-month" class="card-expiry-month stripe-sensitive required form-control">
+                            <option value="01" selected="selected">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                          </select>
+                          <span> / </span>
+                          <select data-stripe="exp-year" class="card-expiry-year stripe-sensitive required form-control">
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <div class="row">
+              <div id="your-information" class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <fieldset>
+                  <div class="row">
+                    <!-- Form Name -->
+                    <h2>Your Information</h2>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                      <!-- Card Holder Name -->
+                      <div class="form-group">
+                        <label class="control-label"  for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>First name</label>
+                        <input type="text" name="card_holder_name" maxlength="70" placeholder="Card Holder Name" class="card-holder-name form-control">
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label"  for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Last Name</label>
+                        <input type="text" name="card_holder_surname" maxlength="70" placeholder="Card Holder Surname" class="card-holder-surname form-control">
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                      <!-- Phone Number -->
+                      <div class="form-group">
+                        <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Phone Number</label>
+                        <input type="text" id="phone" name="phone" maxlength="30" placeholder="Phone Number" class="form-control">
+                      </div>
+                      <!-- Email -->
+                      <div class="form-group">
+                        <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Email Address</label>
+                        <input type="text" name="email" maxlength="65" placeholder="Email" class="email form-control">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <div class="row">
+              <div  id="billing-details" class="komen-callout komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <fieldset>
+                  <div class="row">
+                    <!-- Form Name -->
+                    <h2>Billing Information</h2>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <!-- Country -->
+                      <div class="form-group">
+                        <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Country</label>
+                        <!--input type="text" name="country" placeholder="Country" class="country form-control"-->
+                        <div class="country bfh-selectbox bfh-countries" name="country" placeholder="Select Country" data-flags="true" data-filter="true"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                      <!-- Postcal Code -->
+                      <div class="form-group">
+                        <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Postal Code</label>
+                        <input type="text" name="zip" maxlength="9" placeholder="Postal Code" class="zip form-control">
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                      <!-- Street -->
+                      <div class="form-group">
+                        <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>Street Address, Apt. or Ste.#</label>
+                        <input type="text" name="street" placeholder="Street" class="address form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                      <!-- City -->
+                      <div class="form-group">
+                        <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>City</label>
+                          <input type="text" name="city" placeholder="City" class="city form-control">
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                      <!-- State -->
+                      <div class="form-group">
+                        <label class="control-label" for="textinput"><span class="glyphicon glyphicon-asterisk required"></span>State</label>
+                        <input type="text" name="state" maxlength="65" placeholder="State" class="state form-control">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <div class="row">
+              <div id="end-payment" class="komen-section col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div>
+                  <input type="hidden" id="subscriber_country" name="subscriber_country">
+                  <input type="checkbox" name="subscribe" id="subscribe" checked="checked">
+                  <label for="subscribe">
+                    Yes, I would like to receive&nbsp;emails from Susan G. Komen®
+                  </label>
+                  <!-- Submit -->
+                  <button class="step-button action-button finish-step" type="submit">SEND MY DONATION</button>
+                  <div class="payamount"><p class="amtmonies">$0.00</p><p class="amttimes">ONE-TIME DONATION</p></div>
+                </div>
+              </div>
+            </div>
           </form>
         </div>
         <!-- end col -->
