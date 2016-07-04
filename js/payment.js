@@ -27,31 +27,38 @@ $(function () {
     }
 });
 
-$(function () {
-    $('[data-toggle="popover"]').popoverClosable();
-});
-  // $('[data-toggle="popover"]').popover({html:true,placement:"bottom"}); // enable popovers
+  $(function () {
+      $('[data-toggle="popover"]').popoverClosable();
+  });
 
   $("#no-thanks").click(function(){
-      $('#send-ecard').hide();
-      $('#mail-card').hide();
+      $('#send-ecard').prop( "disabled", true );
+      $('#mail-card').prop( "disabled", true );
   });
 
   $("#yes-mail-card").click(function(){
-      $('#send-ecard').hide();
-      $('#mail-card').show();
+      $('#send-ecard').prop( "disabled", true );
+      $('#mail-card').prop( "disabled", false );
   });
 
   $("#yes-send-ecard").click(function(){
-      $('#send-ecard').show();
-      $('#mail-card').hide();
+      $('#send-ecard').prop( "disabled", false );
+      $('#mail-card').prop( "disabled", true );
   });
 
   $("#card-destination-2").click(function(){
-      $('#tribute-card-me').show();
+      $('#tribute-card-me').prop( "disabled", false );
   });
   $("#card-destination-1").click(function(){
-      $('#tribute-card-me').hide();
+      $('#tribute-card-me').prop( "disabled", true );
+  });
+
+  $("#tribute_show_honor_or_memory").click(function(){
+    if( $('#tribute_show_honor_or_memory').is(':checked') ) {
+      $('#tribute_honoree_name_row').prop( "disabled", false );
+    } else {
+      $('#tribute_honoree_name_row').prop( "disabled", true );
+    }
   });
 
   $("#monthly_donation").click(function(){
@@ -59,14 +66,6 @@ $(function () {
       $('p.amttimes').text("MONTHLY DONATION");
     } else{
       $('p.amttimes').text("ONE-TIME DONATION");
-    }
-  });
-
-  $("#tribute_show_honor_or_memory").click(function(){
-    if( $('#tribute_show_honor_or_memory').is(':checked') ) {
-      $('#tribute_honoree_name_row').show();
-    } else {
-      $('#tribute_honoree_name_row').hide();
     }
   });
 
@@ -98,7 +97,7 @@ $(function () {
 });
 
 $(document).ready(function() {
-  
+  $('#payment-form')[0].reset();
   $('#payment-form').bootstrapValidator({
     message: 'This value is not valid',
     feedbackIcons: {
@@ -317,17 +316,17 @@ $(document).ready(function() {
       ecard.image=$("input:radio[name=selected_ecard]:checked").val();
       ecard.text=$("input:radio[name=tribute_text]:checked").val();
       ecard.send_to=$('#ecard_recipient_email_addresses').val();
-      
+
       if(ecard.from==" ") { ecard.from="Your name" }
-      if (ecard.image=="ecard1") { 
-        ecard.image=null; 
+      if (ecard.image=="ecard1") {
+        ecard.image=null;
         $("div#ecard_preview_content img#card").remove();
       }
       else
       {
         $("div#ecard_preview_content img#card").attr('src', 'img/'+ecard.image+'.png');
       }
-      
+
       $("div#ecard_preview_content .ecard_data").each(function(){
         $(this).html(ecard[$(this).attr('value')]);
       });
@@ -350,7 +349,7 @@ function stripeResponseHandler(status, response) {
       $(".payment-errors").html(response.error.message);
     }
     else {
-      
+
       var form$ = $("#payment-form");
       // token contains id, last4, and card type
       var token = response['id'];

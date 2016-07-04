@@ -1,3 +1,14 @@
+fieldset:disabled{
+  display: none;
+}
+
+label[for="tribute"]{
+  display: block;
+}
+
+input[type="radio"], input[type="checkbox"]{
+  outline: none!important;
+}
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
@@ -230,9 +241,9 @@ img + .komen-p{
   color: #ffffff;
 }
 
-#cont-don-amount, #tribute_honoree_name_row, #send-ecard ,#mail-card, #tribute-card-me {
+/*#cont-don-amount, #tribute_honoree_name_row, #send-ecard ,#mail-card, #tribute-card-me {
   display: none;
-}
+}*/
 #tribute_honoree_name_row{
   margin-top: 25px;
 }
@@ -245,7 +256,7 @@ img + .komen-p{
 #cont-tribute>div:first-child{
     margin-bottom: 14px;
 }
-label.checkbox{
+label.checkbox, label[for="premium_gift_optout"]{
   font-weight: 300;
   cursor: pointer;
 }

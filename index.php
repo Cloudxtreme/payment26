@@ -120,7 +120,7 @@
                         </p>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                          
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                       </div>
                     </div>
                   </div>
@@ -153,7 +153,7 @@
                   <strong>A Memorial gift</strong> is a beautiful tribute to the life of a loved one who has passed on. "></span>
                 </div>
 
-                <div id="tribute_honoree_name_row">
+                <fieldset disabled id="tribute_honoree_name_row">
                   <div class="form-content col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <span class="glyphicon glyphicon-asterisk required"></span>
                     <label for="tribute_honoree_name">Person's Name or Occasion</label>
@@ -169,7 +169,7 @@
                         <label  class="radio-inline"><input id="no-thanks" type="radio" name="send_tribute_card" value="no">No Thanks</label>
                         <label class="radio-inline"><input id="yes-send-ecard" type="radio" name="send_tribute_card" value="ecard">Yes, Send eCard</label>
                         <label class="radio-inline"><input id="yes-mail-card" type="radio" name="send_tribute_card" value="mail">Yes, Mail Card</label>
-                        <div id="send-ecard">
+                        <fieldset disabled id="send-ecard">
                           <div>
                             <label for="" class="send-ecard"> Send eCard on:</label>
                             <select class="form-control komen-date" name="ecard_send_date_MONTH" id="ecard_send_date_MONTH" title="Month">
@@ -257,8 +257,8 @@
                           eCard Preview
                           </button>
                           <label class="checkbox"><input name="e_card_copy_sendername" id="e_card_copy_sendername" type="checkbox">Yes, send me a copy of the eCard.</label>
-                        </div>
-                        <div id="mail-card">
+                        </fieldset>
+                        <fieldset disabled id="mail-card">
                           <p class="komen-p">Type your name exactly as you would like it to appear in the signature of the tribute card.</p>
                           <div>
                             <label for=""><span class="glyphicon glyphicon-asterisk required"></span>Tribute Card Signature (50 characters or less) </label>
@@ -266,7 +266,7 @@
                           </div>
                           <label class="radio" ><input id="card-destination-1" type="radio" name="mail_tribute_card_destination" id="mail_tribute_card_destination" value="card-destination-1">I would like the Tribute Card sent to me.</label>
                           <label class="radio" ><input id="card-destination-2" type="radio" name="mail_tribute_card_destination" id="mail_tribute_card_destination" value="card-destination-2">I would like Komen to send a Tribute Card for me.</label>
-                          <div id="tribute-card-me">
+                          <fieldset disabled id="tribute-card-me">
                             <p>Supply the name and address of the person to whom you would like the tribute card sent.</p>
                             <h5>Tribute Card Recipient Address</h5>
                             <div>
@@ -293,13 +293,12 @@
                               <label class="control-label" for="">Tribute Recipient Country:</label>
                               <input class="form-control" type="text" name="mail_tribute_card_recipient_country" id="mail_tribute_card_recipient_country">
                             </div>
-                          </div>
-                        </div>
+                          </fieldset>
+                        </fieldset>
                       </div>
                     </div>
                   </div>
-
-                  </div>
+                </fieldset>
 
                 <!-- Form Name -->
               </div>
